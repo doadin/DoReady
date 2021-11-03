@@ -1,0 +1,16 @@
+--soulbindID = C_Soulbinds.GetActiveSoulbindID()
+
+_G.AmIReady.SoulBindIDs = {
+    [1] = "Niya",
+    [2] = "Dreamweaver",
+    [3] = "General Draven",
+    [4] = "Plague Deviser Marileth",
+    [5] = "Emeni",
+    [6] = "Korayn",
+    [7] = "Pelagos",
+    [8] = "Nadjia the Mistblade",
+    [9] = "Theotar the Mad Duke",
+    [10] = "Bonesmith Heirmir",
+    [13] = "Kleia",
+    [18] = "Forgelite Prime Mikanikos",
+}
