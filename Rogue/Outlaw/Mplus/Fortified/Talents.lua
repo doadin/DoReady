@@ -1,4 +1,4 @@
-AmIReady.Rogue.Outlaw.MythicPlus.Fortified.Talents = {
+DoReady.Rogue.Outlaw.MythicPlus.Fortified.Talents = {
 [1] = 196938,
 [2] = 196924,
 [3] = 137619,

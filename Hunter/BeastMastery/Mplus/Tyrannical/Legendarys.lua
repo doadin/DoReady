@@ -1,4 +1,4 @@
-AmIReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Legendarys = {
 [1] = 336844,
 [2] = 356375,
 [3] = 356618,

@@ -1,4 +1,4 @@
-AmIReady.Druid.Balance.MythicPlus.Tyrannical.Talents = {
+DoReady.Druid.Balance.MythicPlus.Tyrannical.Talents = {
 [1] = 205636,
 [2] = 102401,
 [3] = 197492,

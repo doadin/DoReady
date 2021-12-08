@@ -1,4 +1,4 @@
-AmIReady.Shaman.Elemental.MythicPlus.Tyrannical.Talents = {
+DoReady.Shaman.Elemental.MythicPlus.Tyrannical.Talents = {
 [1] = 333919,
 [2] = 273221,
 [3] = 260878,

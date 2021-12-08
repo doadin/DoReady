@@ -1,4 +1,4 @@
-AmIReady.Druid.Feral.MythicPlus.Tyrannical.Talents = {
+DoReady.Druid.Feral.MythicPlus.Tyrannical.Talents = {
 [1] = 202031,
 [2] = 102401,
 [3] = 197488,

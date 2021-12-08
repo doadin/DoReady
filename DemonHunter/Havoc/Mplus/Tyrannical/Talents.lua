@@ -1,4 +1,4 @@
-AmIReady.DemonHunter.Havoc.MythicPlus.Tyrannical.Talents = {
+DoReady.DemonHunter.Havoc.MythicPlus.Tyrannical.Talents = {
 [1] = 232893,
 [2] = 203555,
 [3] = 347461,

@@ -1,4 +1,4 @@
-AmIReady.DeathKnight.Frost.MythicPlus.Tyrannical.Legendarys = {
+DoReady.DeathKnight.Frost.MythicPlus.Tyrannical.Legendarys = {
 [1] = 341724,
 [2] = 353822,
 [3] = 334678,

@@ -1,7 +1,7 @@
 local AceGUI = LibStub("AceGUI-3.0")
 local MainFrame = AceGUI:Create("Frame")
-MainFrame:SetTitle("AmIReady")
-MainFrame:SetStatusText("AmIReady" .. " " .. GetAddOnMetadata("AmIReady", "Version") )
+MainFrame:SetTitle("DoReady")
+MainFrame:SetStatusText("DoReady" .. " " .. GetAddOnMetadata("DoReady", "Version") )
 MainFrame:EnableResize(false)
 MainFrame:SetWidth(850)
 MainFrame:SetHeight(150)
@@ -10,7 +10,7 @@ MainFrame:Hide()
 local function GetTalents(_,event, one, two)
     MainFrame:ReleaseChildren()
 
-    if (event == "READY_CHECK" or event == "AmIReady_MINIMAPBUTTON") or MainFrame:IsShown() then
+    if (event == "READY_CHECK" or event == "DoReady_MINIMAPBUTTON") or MainFrame:IsShown() then
         --print("we are doing things")
         --TalentHeading:ReleaseChildren()
         --EnchantHeading:ReleaseChildren()
@@ -33,7 +33,7 @@ local function GetTalents(_,event, one, two)
 
         local name, instanceType, difficultyID, difficultyName, maxPlayers, dynamicDifficulty, isDynamic, instanceID, instanceGroupSize, LfgDungeonID = GetInstanceInfo()
         --if instanceType ~= "raid" or instanceType ~= "party" then
-        --    if event ~= "AmIReady_MINIMAPBUTTON" then
+        --    if event ~= "DoReady_MINIMAPBUTTON" then
         --        return
         --    end
         --end
@@ -56,10 +56,10 @@ local function GetTalents(_,event, one, two)
             local id, SpecName = GetSpecializationInfo(GetSpecialization())
             local activeSpec = GetSpecialization()
             local talentID, name, texture, selected, available, spellID, unknown, row, column, known, grantedByAura = GetTalentInfoBySpecialization(activeSpec, talentTier, selected)
-            local ProperSpell = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
+            local ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
             else
-               --print("AmIReady We Sugest Using: ", ProperSpell)
+               --print("DoReady We Sugest Using: ", ProperSpell)
                NeedTalentsWidget = true
             end
          end
@@ -86,7 +86,7 @@ local function GetTalents(_,event, one, two)
             activeSpec = GetSpecialization()
 
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 1, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1] == spellID then
                 --TalentOne:SetImage()
                 --TalentOne:SetImageSize(0,0)
                 --TalentOne:SetLabel("")
@@ -94,8 +94,8 @@ local function GetTalents(_,event, one, two)
                 TalentOne = AceGUI:Create("Icon")
                 --TalentOne:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentOne)
-                local TalentOnename, _, TalentOnefiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
-                local TalentOnedescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
+                local TalentOnename, _, TalentOnefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
+                local TalentOnedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
                 TalentOne:SetImage(TalentOnefiledataid)
                 TalentOne:SetImageSize(25,25)
                 TalentOne:SetLabel("Level 15: " .. TalentOnename)
@@ -112,7 +112,7 @@ local function GetTalents(_,event, one, two)
 
             available, selected = GetTalentTierInfo(2, 1)
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 2, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2] == spellID then
                 --TalentTwo:SetImage()
                 --TalentTwo:SetImageSize(0,0)
                 --TalentTwo:SetLabel("")
@@ -120,8 +120,8 @@ local function GetTalents(_,event, one, two)
                 TalentTwo = AceGUI:Create("Icon")
                 --TalentTwo:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentTwo)
-                local TalentTwoname, _, TalentTwofiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
-                local TalentTwodescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
+                local TalentTwoname, _, TalentTwofiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
+                local TalentTwodescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
                 TalentTwo:SetImage(TalentTwofiledataid)
                 TalentTwo:SetImageSize(25,25)
                 TalentTwo:SetLabel("Level 25: " .. TalentTwoname)
@@ -138,7 +138,7 @@ local function GetTalents(_,event, one, two)
 
             available, selected = GetTalentTierInfo(3, 1)
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 3, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3] == spellID then
                 --TalentThree:SetImage()
                 --TalentThree:SetImageSize(0,0)
                 --TalentThree:SetLabel("")
@@ -146,8 +146,8 @@ local function GetTalents(_,event, one, two)
                 TalentThree = AceGUI:Create("Icon")
                 --TalentThree:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentThree)
-                local TalentThreename, _, TalentThreefiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
-                local TalentThreedescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
+                local TalentThreename, _, TalentThreefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
+                local TalentThreedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
                 TalentThree:SetImage(TalentThreefiledataid)
                 TalentThree:SetImageSize(25,25)
                 TalentThree:SetLabel("Level 30: " .. TalentThreename)
@@ -164,7 +164,7 @@ local function GetTalents(_,event, one, two)
 
             available, selected = GetTalentTierInfo(4, 1)
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 4, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4] == spellID then
                 --TalentFour:SetImage()
                 --TalentFour:SetImageSize(0,0)
                 --TalentFour:SetLabel("")
@@ -172,8 +172,8 @@ local function GetTalents(_,event, one, two)
                 TalentFour = AceGUI:Create("Icon")
                 --TalentFour:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentFour)
-                local TalentFourname, _, TalentFourfiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
-                local TalentFourdescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
+                local TalentFourname, _, TalentFourfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
+                local TalentFourdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
                 TalentFour:SetImage(TalentFourfiledataid)
                 TalentFour:SetImageSize(25,25)
                 TalentFour:SetLabel("Level 35: " .. TalentFourname)
@@ -191,7 +191,7 @@ local function GetTalents(_,event, one, two)
 
             available, selected = GetTalentTierInfo(5, 1)
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 5, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5] == spellID then
                 --TalentFive:SetImage()
                 --TalentFive:SetImageSize(0,0)
                 --TalentFive:SetLabel("")
@@ -199,8 +199,8 @@ local function GetTalents(_,event, one, two)
                 TalentFive = AceGUI:Create("Icon")
                 --TalentFive:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentFive)    
-                local TalentFivename, _, TalentFivefiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
-                local TalentFivedescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
+                local TalentFivename, _, TalentFivefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
+                local TalentFivedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
                 TalentFive:SetImage(TalentFivefiledataid)
                 TalentFive:SetImageSize(25,25)
                 TalentFive:SetLabel("Level 40: " .. TalentFivename)
@@ -218,7 +218,7 @@ local function GetTalents(_,event, one, two)
 
             available, selected = GetTalentTierInfo(6, 1)
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 6, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6] == spellID then
                 --TalentSix:SetImage()
                 --TalentSix:SetImageSize(0,0)
                 --TalentSix:SetLabel("")
@@ -226,8 +226,8 @@ local function GetTalents(_,event, one, two)
                 TalentSix = AceGUI:Create("Icon")
                 --TalentSix:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentSix)
-                local TalentSixname, _, TalentSixfiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
-                local TalentSixdescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
+                local TalentSixname, _, TalentSixfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
+                local TalentSixdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
                 TalentSix:SetImage(TalentSixfiledataid)
                 TalentSix:SetImageSize(25,25)
                 TalentSix:SetLabel("Level 45: " .. TalentSixname)
@@ -245,7 +245,7 @@ local function GetTalents(_,event, one, two)
 
             available, selected = GetTalentTierInfo(7, 1)
             _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 7, selected)
-            if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7] == spellID then
+            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7] == spellID then
                 --TalentSeven:SetImage()
                 --TalentSeven:SetImageSize(0,0)
                 --TalentSeven:SetLabel("")
@@ -253,8 +253,8 @@ local function GetTalents(_,event, one, two)
                 TalentSeven = AceGUI:Create("Icon")
                 --TalentSeven:SetImageSize(1,1)
                 TalentHeading:AddChild(TalentSeven)    
-                local TalentSevenname, _, TalentSevenfiledataid = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
-                local TalentSevendescription = GetSpellDescription(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
+                local TalentSevenname, _, TalentSevenfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
+                local TalentSevendescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
                 TalentSeven:SetImage(TalentSevenfiledataid)
                 TalentSeven:SetImageSize(25,25)
                 TalentSeven:SetLabel("Level 50: " .. TalentSevenname)
@@ -278,8 +278,8 @@ local function GetTalents(_,event, one, two)
         --    local id, SpecName = GetSpecializationInfo(GetSpecialization())
         --    local activeSpec = GetSpecialization()
         --    local talentID, name, texture, selected, available, spellID, unknown, row, column, known, grantedByAura = GetTalentInfoBySpecialization(activeSpec, talentTier, selected)
-        --    local ProperSpell = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
-        --    if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
+        --    local ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
+        --    if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
         --    else
         --        if MainFrame:IsShown() then
         --            MainFrame:Hide()
@@ -378,7 +378,7 @@ local function GetTalents(_,event, one, two)
             --print(type(itemLink))
             if itemLink and type(itemLink) == "string" and itemLink ~= "" then
                 local itemName, _, _, ilvl = GetItemInfo(itemLink)
-                for _,spellID in pairs(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
                     if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
                         legendaryfound = true
                     end
@@ -391,7 +391,7 @@ local function GetTalents(_,event, one, two)
             local LegendaryHeading = AceGUI:Create("InlineGroup")
             LegendaryHeading:SetLayout("Flow")
             numlegendarystosugest = 0
-            for _,spellID in pairs(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+            for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
                 numlegendarystosugest = numlegendarystosugest + 1
             end
             LegendaryHeading:SetWidth(tonumber(numlegendarystosugest*120))
@@ -400,7 +400,7 @@ local function GetTalents(_,event, one, two)
             LegendaryHeading:ReleaseChildren()
 
             local WrongLegendaryText = ""
-            for _,spellID in pairs(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+            for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
                 WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
                 local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
                 local WrongLegendaryIcon = AceGUI:Create("Icon")
@@ -491,13 +491,13 @@ eventframe:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 eventframe:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 eventframe:SetScript("OnEvent", GetTalents)
 
-local addon = LibStub("AceAddon-3.0"):NewAddon("AmIReady", "AceConsole-3.0")
-local AmIReadyLDB = LibStub("LibDataBroker-1.1"):NewDataObject("AmIReadyLDB", {
+local addon = LibStub("AceAddon-3.0"):NewAddon("DoReady", "AceConsole-3.0")
+local DoReadyLDB = LibStub("LibDataBroker-1.1"):NewDataObject("DoReadyLDB", {
 type = "launcher",
-text = "AmIReady",
+text = "DoReady",
 icon = "Interface\\Icons\\spell_nature_moonkey",
 OnTooltipShow = function(tooltip)
-    tooltip:SetText("AmIReady")
+    tooltip:SetText("DoReady")
     tooltip:AddLine("Left Click To Show Your Character/Guild Info", 1, 1, 1)
     tooltip:AddLine("Right Click To Show Your Characters Season Bests", 1, 1, 1)
     tooltip:Show()
@@ -511,7 +511,7 @@ OnClick = function(clickedframe, button)
                     elseif alt_key then
                     elseif control_key then
                     else
-                        GetTalents(_,"AmIReady_MINIMAPBUTTON")
+                        GetTalents(_,"DoReady_MINIMAPBUTTON")
                     end
                 end
                 if button == "RightButton" then
@@ -522,21 +522,21 @@ OnClick = function(clickedframe, button)
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 
 function addon:OnInitialize()
-    self.db = LibStub("AceDB-3.0"):New("AmIReadyDB", { profile = { minimap = { hide = false, }, }, })
-    LibDBIcon:Register("AmIReadyIcon", AmIReadyLDB, self.db.profile.minimap)
-    self:RegisterChatCommand("amiready", "OpenUI")
+    self.db = LibStub("AceDB-3.0"):New("DoReadyDB", { profile = { minimap = { hide = false, }, }, })
+    LibDBIcon:Register("DoReadyIcon", DoReadyLDB, self.db.profile.minimap)
+    self:RegisterChatCommand("DoReady", "OpenUI")
 end
 
 function addon:OpenUI(one, two, three, four)
     if one == "toggle minimap" then
         self.db.profile.minimap.hide = not self.db.profile.minimap.hide
         if self.db.profile.minimap.hide then
-            LibDBIcon:Hide("AmIReadyIcon")
+            LibDBIcon:Hide("DoReadyIcon")
         else
-            LibDBIcon:Show("AmIReadyIcon")
+            LibDBIcon:Show("DoReadyIcon")
         end
     end
     if one == "" then
-        GetTalents(_,"AmIReady_MINIMAPBUTTON")
+        GetTalents(_,"DoReady_MINIMAPBUTTON")
     end
 end

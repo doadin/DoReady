@@ -1,4 +1,4 @@
-AmIReady.Paladin.Holy.Raid.Talants = {
+DoReady.Paladin.Holy.Raid.Talants = {
 [1] = 114158,
 [2] = 183778,
 [3] = 115750,

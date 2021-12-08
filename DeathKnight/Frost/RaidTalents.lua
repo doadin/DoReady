@@ -1,4 +1,4 @@
-AmIReady.DeathKnight.Frost.Raid.Talants = {
+DoReady.DeathKnight.Frost.Raid.Talants = {
 [1] = 281208,
 [2] = 207104,
 [3] = 207167,

@@ -1,4 +1,4 @@
-AmIReady.Warrior.Fury.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Warrior.Fury.MythicPlus.Tyrannical.Legendarys = {
 [1] = 357996,
 [2] = 335266,
 [3] = 354131,

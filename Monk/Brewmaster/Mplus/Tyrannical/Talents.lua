@@ -1,4 +1,4 @@
-AmIReady.Monk.Brewmaster.MythicPlus.Tyrannical.Talents = {
+DoReady.Monk.Brewmaster.MythicPlus.Tyrannical.Talents = {
 [1] = 115098,
 [2] = 116841,
 [3] = 325093,

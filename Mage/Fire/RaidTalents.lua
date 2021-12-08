@@ -1,4 +1,4 @@
-AmIReady.Mage.Fire.Raid.Talants = {
+DoReady.Mage.Fire.Raid.Talants = {
 [1] = 269644,
 [2] = 212653,
 [3] = 116011,

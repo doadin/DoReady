@@ -1,4 +1,4 @@
-AmIReady.DemonHunter.Vengeance.Raid.Talents = {
+DoReady.DemonHunter.Vengeance.Raid.Talents = {
 [1] = 207548,
 [2] = 207739,
 [3] = 336639,

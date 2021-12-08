@@ -1,4 +1,4 @@
-AmIReady.Monk.Windwalker.MythicPlus.Fortified.Talents = {
+DoReady.Monk.Windwalker.MythicPlus.Fortified.Talents = {
 [1] = 123986,
 [2] = 116841,
 [3] = 115396,

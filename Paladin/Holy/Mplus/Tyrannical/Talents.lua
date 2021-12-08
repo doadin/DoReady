@@ -1,4 +1,4 @@
-AmIReady.Paladin.Holy.MythicPlus.Tyrannical.Talents = {
+DoReady.Paladin.Holy.MythicPlus.Tyrannical.Talents = {
 [1] = 114158,
 [2] = 183778,
 [3] = 115750,

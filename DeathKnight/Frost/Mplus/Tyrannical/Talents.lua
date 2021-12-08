@@ -1,4 +1,4 @@
-AmIReady.DeathKnight.Frost.MythicPlus.Tyrannical.Talents = {
+DoReady.DeathKnight.Frost.MythicPlus.Tyrannical.Talents = {
 [1] = 281208,
 [2] = 207104,
 [3] = 207167,

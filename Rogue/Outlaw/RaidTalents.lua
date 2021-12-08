@@ -1,4 +1,4 @@
-AmIReady.Rogue.Outlaw.Raid.Talants = {
+DoReady.Rogue.Outlaw.Raid.Talants = {
 [1] = 196937,
 [2] = 196924,
 [3] = 137619,

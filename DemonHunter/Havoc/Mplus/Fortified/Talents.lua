@@ -1,4 +1,4 @@
-AmIReady.DemonHunter.Havoc.MythicPlus.Fortified.Talents = {
+DoReady.DemonHunter.Havoc.MythicPlus.Fortified.Talents = {
 [1] = 232893,
 [2] = 203555,
 [3] = 347461,

@@ -1,4 +1,4 @@
-AmIReady.Mage.Frost.MythicPlus.Tyrannical.Talents = {
+DoReady.Mage.Frost.MythicPlus.Tyrannical.Talents = {
 [1] = 205024,
 [2] = 212653,
 [3] = 116011,

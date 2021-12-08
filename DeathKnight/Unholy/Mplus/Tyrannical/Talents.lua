@@ -1,4 +1,4 @@
-AmIReady.DeathKnight.Unholy.MythicPlus.Tyrannical.Talents = {
+DoReady.DeathKnight.Unholy.MythicPlus.Tyrannical.Talents = {
 [1] = 207311,
 [2] = 115989,
 [3] = 108194,

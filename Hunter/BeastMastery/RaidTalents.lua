@@ -1,4 +1,4 @@
-AmIReady.Hunter.BeastMastery.Raid.Talants = {
+DoReady.Hunter.BeastMastery.Raid.Talants = {
 [1] = 267116,
 [2] = 193532,
 [3] = 270581,

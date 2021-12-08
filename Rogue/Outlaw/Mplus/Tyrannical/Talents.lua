@@ -1,4 +1,4 @@
-AmIReady.Rogue.Outlaw.MythicPlus.Tyrannical.Talents = {
+DoReady.Rogue.Outlaw.MythicPlus.Tyrannical.Talents = {
 [1] = 196938,
 [2] = 196924,
 [3] = 137619,

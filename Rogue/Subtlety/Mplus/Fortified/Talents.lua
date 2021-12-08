@@ -1,4 +1,4 @@
-AmIReady.Rogue.Subtlety.MythicPlus.Fortified.Talents = {
+DoReady.Rogue.Subtlety.MythicPlus.Fortified.Talents = {
 [1] = 193537,
 [2] = 108209,
 [3] = 193531,

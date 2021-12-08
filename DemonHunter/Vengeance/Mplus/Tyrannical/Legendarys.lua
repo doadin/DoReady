@@ -1,4 +1,4 @@
-AmIReady.DemonHunter.Vengeance.MythicPlus.Tyrannical.Legendarys = {
+DoReady.DemonHunter.Vengeance.MythicPlus.Tyrannical.Legendarys = {
 [1] = 355893,
 [2] = 337547,
 [3] = 337534,

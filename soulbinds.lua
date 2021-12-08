@@ -1,6 +1,6 @@
 --soulbindID = C_Soulbinds.GetActiveSoulbindID()
 
-_G.AmIReady.SoulBindIDs = {
+_G.DoReady.SoulBindIDs = {
     [1] = "Niya",
     [2] = "Dreamweaver",
     [3] = "General Draven",

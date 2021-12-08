@@ -1,4 +1,4 @@
-AmIReady.Paladin.Holy.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Paladin.Holy.MythicPlus.Tyrannical.Legendarys = {
 [1] = 337594,
 [2] = 337638,
 [3] = 355100,

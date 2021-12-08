@@ -1,4 +1,4 @@
-AmIReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Talents = {
+DoReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Talents = {
 [1] = 267116,
 [2] = 193532,
 [3] = 199483,

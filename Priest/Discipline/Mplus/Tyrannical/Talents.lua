@@ -1,4 +1,4 @@
-AmIReady.Priest.Discipline.MythicPlus.Tyrannical.Talents = {
+DoReady.Priest.Discipline.MythicPlus.Tyrannical.Talents = {
 [1] = 265259,
 [2] = 121536,
 [3] = 129250,

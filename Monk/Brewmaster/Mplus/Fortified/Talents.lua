@@ -1,4 +1,4 @@
-AmIReady.Monk.Brewmaster.MythicPlus.Fortified.Talents = {
+DoReady.Monk.Brewmaster.MythicPlus.Fortified.Talents = {
 [1] = 115098,
 [2] = 116841,
 [3] = 325093,

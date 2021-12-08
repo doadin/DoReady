@@ -1,6 +1,6 @@
 required-dependencies:
     - ace3
-package-as: AmIReady
+package-as: DoReady
 
 ignore:
    - .pkgmeta

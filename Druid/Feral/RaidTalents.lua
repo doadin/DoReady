@@ -1,4 +1,4 @@
-AmIReady.Druid.Feral.Raid.Talants = {
+DoReady.Druid.Feral.Raid.Talants = {
 [1] = 202031,
 [2] = 102401,
 [3] = 197488,

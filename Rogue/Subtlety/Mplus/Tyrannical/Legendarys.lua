@@ -1,4 +1,4 @@
-AmIReady.Rogue.Subtlety.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Rogue.Subtlety.MythicPlus.Tyrannical.Legendarys = {
 [1] = 354703,
 [2] = 340089,
 [3] = 354837,

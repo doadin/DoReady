@@ -1,4 +1,4 @@
-AmIReady.Warlock.Affliction.MythicPlus.Tyrannical.Talents = {
+DoReady.Warlock.Affliction.MythicPlus.Tyrannical.Talents = {
 [1] = 198590,
 [2] = 196102,
 [3] = 108416,

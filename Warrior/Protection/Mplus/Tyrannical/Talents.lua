@@ -1,4 +1,4 @@
-AmIReady.Warrior.Protection.MythicPlus.Tyrannical.Talents = {
+DoReady.Warrior.Protection.MythicPlus.Tyrannical.Talents = {
 [1] = 236279,
 [2] = 103827,
 [3] = 202560,

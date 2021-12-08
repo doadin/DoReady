@@ -1,4 +1,4 @@
-AmIReady.Druid.Guardian.MythicPlus.Fortified.Talents = {
+DoReady.Druid.Guardian.MythicPlus.Fortified.Talents = {
 [1] = 203962,
 [2] = 108238,
 [3] = 197488,

@@ -1,4 +1,4 @@
-AmIReady.Hunter.Marksmanship.MythicPlus.Fortified.Talents = {
+DoReady.Hunter.Marksmanship.MythicPlus.Fortified.Talents = {
 [1] = 260309,
 [2] = 212431,
 [3] = 199483,

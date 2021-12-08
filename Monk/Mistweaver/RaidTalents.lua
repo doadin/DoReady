@@ -1,4 +1,4 @@
-AmIReady.Monk.Mistweaver.Raid.Talants = {
+DoReady.Monk.Mistweaver.Raid.Talants = {
 [1] = 197900,
 [2] = 116841,
 [3] = 197908,

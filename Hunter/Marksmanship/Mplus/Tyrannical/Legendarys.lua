@@ -1,4 +1,4 @@
-AmIReady.Hunter.Marksmanship.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Hunter.Marksmanship.MythicPlus.Tyrannical.Legendarys = {
 [1] = 336867,
 [2] = 356264,
 [3] = 356375,

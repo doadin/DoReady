@@ -1,4 +1,4 @@
-AmIReady.Druid.Restoration.MythicPlus.Fortified.Talents = {
+DoReady.Druid.Restoration.MythicPlus.Fortified.Talents = {
 [1] = 102351,
 [2] = 108238,
 [3] = 197632,
