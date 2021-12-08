@@ -20,7 +20,6 @@ Libs\LibDeflate\lib.xml
 Libs\AceSerializer-3.0\AceSerializer-3.0.lua
 
 Core.lua
-Check.lua
 UI.lua
 
 DeathKnight\Blood\Mplus\Fortified\Talents.lua
