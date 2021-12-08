@@ -5,10 +5,10 @@
 
 ## Author: Doadin
 ## SavedVariables:
-## X-Curse-Project-ID:
+## X-Curse-Project-ID: 554551
 
 
-## Title: AmIReady
+## Title: DoReady
 
 Libs\LibStub\LibStub.lua
 Libs\AceAddon-3.0\AceAddon-3.0.xml
