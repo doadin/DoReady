@@ -50,7 +50,7 @@ local function CheckTalents(self, event, firstarg, secondarg)
        local ProperSpell = GetSpellInfo(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
        if _G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
        else
-          print("AmIReady We Sugest Using: ", ProperSpell)
+          --print("AmIReady We Sugest Using: ", ProperSpell)
        end
     end
 end
@@ -63,44 +63,44 @@ local function CheckEnchants(self, event, isLogin, isReload)
     local Chestlink = GetInventoryItemLink("player", INVSLOT_CHEST)
     if type(Chestlink) == "string" then
         local _, itemId, ChestenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Chestlink)
-        if not ChestenchantId then print("AmIReady: You Have No Chest Enchant") end
+        if ChestenchantId == "" then print("AmIReady: You Have No Chest Enchant") end
     end
 
     local Cloaklink = GetInventoryItemLink("player", INVSLOT_BACK)
     if type(Cloaklink) == "string" then
         local _, itemId, CloakenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Cloaklink)
-        if not CloakenchantId then print("AmIReady: You Have No Cloak Enchant") end
+        if CloakenchantId == "" then print("AmIReady: You Have No Cloak Enchant") end
     end
 
     local FingerOnelink = GetInventoryItemLink("player", INVSLOT_FINGER1)
     if type(FingerOnelink) == "string" then
         local _, itemId, FingerOneenchantId, gem1, gem2, gem3, gem4 = strsplit(":", FingerOnelink)
-        if not FingerOneenchantId then print("AmIReady: You Have No Finger 1 Enchant") end
+        if FingerOneenchantId == "" then print("AmIReady: You Have No Finger 1 Enchant") end
     end
 
     local FingerTwolink = GetInventoryItemLink("player", INVSLOT_FINGER2)
     if type(FingerTwolink) == "string" then
         local _, itemId, FingerTwoenchantId, gem1, gem2, gem3, gem4 = strsplit(":", FingerTwolink)
-        if not FingerTwoenchantId then print("AmIReady: You Have No Finger 2 Enchant") end
+        if FingerTwoenchantId == "" then print("AmIReady: You Have No Finger 2 Enchant") end
     end
 
     local MainHandlink = GetInventoryItemLink("player", INVSLOT_MAINHAND)
     if type(MainHandlink) == "string" then
         local _, itemId, MainHandenchantId, gem1, gem2, gem3, gem4 = strsplit(":", MainHandlink)
-        if not MainHandenchantId then print("AmIReady: You Have No Main Hand Enchant") end
+        if MainHandenchantId == "" then print("AmIReady: You Have No Main Hand Enchant") end
     end
 
     local OffHandlink = GetInventoryItemLink("player", INVSLOT_OFFHAND)
     if type(OffHandlink) == "string" then
         local _, itemId, OffHandenchantId, gem1, gem2, gem3, gem4 = strsplit(":", OffHandlink)
-        if not OffHandenchantId then print("AmIReady: You Have No Off Hand Enchant") end
+        if OffHandenchantId == "" then print("AmIReady: You Have No Off Hand Enchant") end
     end
 
     if primaryStat and primaryStat == 2 then
         local Feetlink = GetInventoryItemLink("player", INVSLOT_FEET)
         if type(Feetlink) == "string" then
             local _, itemId, FeetenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Feetlink)
-            if not FeetenchantId then print("AmIReady: You Have No Feet Enchant") end
+            if FeetenchantId == "" then print("AmIReady: You Have No Feet Enchant") end
         end
     end
 
@@ -108,7 +108,7 @@ local function CheckEnchants(self, event, isLogin, isReload)
         local Handslink = GetInventoryItemLink("player", INVSLOT_HAND)
         if type(Handslink) == "string" then
             local _, itemId, HandsenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Handslink)
-            if not HandsenchantId then print("AmIReady: You Have No Hands Enchant") end
+            if HandsenchantId == "" then print("AmIReady: You Have No Hands Enchant") end
         end
     end
 
@@ -116,7 +116,7 @@ local function CheckEnchants(self, event, isLogin, isReload)
         local Wristlink = GetInventoryItemLink("player", INVSLOT_WRIST)
         if type(Wristlink) == "string" then
             local _, itemId, WristenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Wristlink)
-            if not WristenchantId then print("AmIReady: You Have No Wrist Enchant") end
+            if WristenchantId == "" then print("AmIReady: You Have No Wrist Enchant") end
         end
     end
 
