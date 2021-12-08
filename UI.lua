@@ -43,6 +43,8 @@ local function GetTalents(_,event, one, two)
         elseif instanceType == "raid" then
             instanceType = "Raid"
         end
+        --TODO: Fix Raid
+        instanceType = "MythicPlus"
         local CurrentClass = ClassIndexTable[classIndex]
         local id, SpecName = GetSpecializationInfo(GetSpecialization())
         local CurrentAffixes = C_MythicPlus.GetCurrentAffixes()
@@ -361,18 +363,89 @@ local function GetTalents(_,event, one, two)
             MainFrame:AddChild(EnchantHeading)
             EnchantHeading:ReleaseChildren()
 
-            MissingEnchantsTextLable = AceGUI:Create("Label")
+            local MissingEnchantsTextLable = AceGUI:Create("Label")
             MissingEnchantsTextLable:SetText("You are missing enchants in the following slots:" .. MissingEnchantsText)
             EnchantHeading:AddChild(MissingEnchantsTextLable)
             EnchantHeading:DoLayout()
         end
+
+        local slots = {"Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "Tabard", "Wrist", "Waist", "Legs", "Feet", "Hands", "Finger0", "Finger1", "Trinket0", "Trinket1", "MainHand", "SecondaryHand"}
+        local legendaryfound = false
+        for slotNumber,slotName in pairs(slots) do
+            --print(slotNumber,slotName)
+            local slotID = GetInventorySlotInfo(slotName .. "slot")
+            local itemLink = GetInventoryItemLink("player", slotID)
+            --print(type(itemLink))
+            if itemLink and type(itemLink) == "string" and itemLink ~= "" then
+                local itemName, _, _, ilvl = GetItemInfo(itemLink)
+                for _,spellID in pairs(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                    if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
+                        legendaryfound = true
+                    end
+                end
+            end
+        end
+
+        local numlegendarystosugest = 0
+        if not legendaryfound then
+            local LegendaryHeading = AceGUI:Create("InlineGroup")
+            LegendaryHeading:SetLayout("Flow")
+            numlegendarystosugest = 0
+            for _,spellID in pairs(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                numlegendarystosugest = numlegendarystosugest + 1
+            end
+            LegendaryHeading:SetWidth(tonumber(numlegendarystosugest*120))
+            LegendaryHeading:SetTitle("Suggested Legendarys")
+            MainFrame:AddChild(LegendaryHeading)
+            LegendaryHeading:ReleaseChildren()
+
+            local WrongLegendaryText = ""
+            for _,spellID in pairs(_G.AmIReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
+                local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
+                local WrongLegendaryIcon = AceGUI:Create("Icon")
+                WrongLegendaryIcon:SetImage(WrongLegendaryWidgetIcon)
+                WrongLegendaryIcon:SetImageSize(25,25)
+                WrongLegendaryIcon:SetLabel(GetSpellInfo(spellID))
+                WrongLegendaryIcon.tooltipText = GetSpellInfo(spellID)
+                WrongLegendaryIcon:SetCallback("OnEnter",function()
+                    GameTooltip:SetOwner(WrongLegendaryIcon.frame, "ANCHOR_BOTTOM",0,-5)
+                    GameTooltip:SetText(GetSpellDescription(spellID),1,1,1,1)
+                    GameTooltip:Show()
+                end)
+                WrongLegendaryIcon:SetCallback("OnLeave",function()
+                    GameTooltip:Hide()
+                end)
+                LegendaryHeading:AddChild(WrongLegendaryIcon)
+            end
+            --WrongLegendaryTextLable:SetText("We suggest using one of the following legendarys:" .. WrongLegendaryText)
+            --LegendaryHeading:AddChild(WrongLegendaryTextLable)
+            LegendaryHeading:DoLayout()
+
+
+        end
+
         --MainFrame:SetHeight(0)
         local MainFrameHeightChange = 0
+        local lengthneededforlegendaries =  tonumber(numlegendarystosugest*130)
+        local lengthneededfortalents = (numtalentschanged * 150)
+        if lengthneededforlegendaries and lengthneededfortalents then
+            if lengthneededfortalents > lengthneededforlegendaries then
+                MainFrame:SetWidth(lengthneededfortalents)
+            elseif lengthneededfortalents < lengthneededforlegendaries  then
+                MainFrame:SetWidth(lengthneededforlegendaries)
+            else
+                MainFrame:SetWidth(lengthneededforlegendaries)
+            end
+        end
         if numtalentschanged and numtalentschanged > 0 then
             MainFrameHeightChange = 150
-            MainFrame:SetWidth(numtalentschanged * 150)
+            --MainFrame:SetWidth(numtalentschanged * 150)
         end
         if MissingEnchantsText ~= "" then
+            MainFrameHeightChange = MainFrameHeightChange + 100
+        end
+        if not legendaryfound then
             MainFrameHeightChange = MainFrameHeightChange + 100
         end
         if MainFrameHeightChange and MainFrameHeightChange > 0 then
