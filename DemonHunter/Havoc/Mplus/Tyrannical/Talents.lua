@@ -3,7 +3,7 @@ AmIReady.DemonHunter.Havoc.MythicPlus.Tyrannical.Talents = {
 [2] = 203555,
 [3] = 347461,
 [4] = 196555,
-[5] = 258860,
+[5] = 206416,
 [6] = 211881,
-[7] = 206476,
+[7] = 213410,
 }

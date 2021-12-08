@@ -1,7 +1,7 @@
 AmIReady.Druid.Restoration.MythicPlus.Tyrannical.Talents = {
 [1] = 102351,
-[2] = 108238,
-[3] = 197632,
+[2] = 102401,
+[3] = 197490,
 [4] = 319454,
 [5] = 158478,
 [6] = 207385,

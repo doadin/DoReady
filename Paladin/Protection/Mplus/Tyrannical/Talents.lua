@@ -4,6 +4,6 @@ AmIReady.Paladin.Protection.MythicPlus.Tyrannical.Talents = {
 [3] = 115750,
 [4] = 114154,
 [5] = 223817,
-[6] = 204054,
-[7] = 204077,
+[6] = 315924,
+[7] = 204074,
 }
