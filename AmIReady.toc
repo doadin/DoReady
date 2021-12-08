@@ -1,5 +1,5 @@
-## Interface: 90100
-## Version: 1.0
+## Interface: 90105
+## Version: @project-version@
 
 ## Notes: Inventory Management with virtual bags divided into sections.
 
@@ -10,13 +10,14 @@
 
 ## Title: AmIReady
 
-libs\AceAddon-3.0\AceAddon-3.0.xml
-libs\AceConsole-3.0\AceConsole-3.0.xml
-libs\AceDB-3.0\AceDB-3.0.xml
-libs\AceGUI-3.0\AceGUI-3.0.xml
-libs\LibDBIcon-1.0\embeds.xml
-libs\LibDeflate\lib.xml
-libs\AceSerializer-3.0\AceSerializer-3.0.lua
+Libs\LibStub\LibStub.lua
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\LibDBIcon-1.0\embeds.xml
+Libs\LibDeflate\lib.xml
+Libs\AceSerializer-3.0\AceSerializer-3.0.lua
 
 Core.lua
 Check.lua
