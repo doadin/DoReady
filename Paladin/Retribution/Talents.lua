@@ -1,4 +1,4 @@
-AmIReady.Paladin.Retribution.Raid.Talents = {
+DoReady.Paladin.Retribution.Raid.Talents = {
 [1] = 343527,
 [2] = 231832,
 [3] = 234299,

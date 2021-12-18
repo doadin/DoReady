@@ -1,4 +1,4 @@
-AmIReady.Monk.Mistweaver.MythicPlus.Fortified.Legendarys = {
+DoReady.Monk.Mistweaver.MythicPlus.Fortified.Legendarys = {
 [1] = 356818,
 [2] = 337172,
 [3] = 337473,

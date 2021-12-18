@@ -1,4 +1,4 @@
-AmIReady.Shaman.Enhancement.MythicPlus.Fortified.Legendarys = {
+DoReady.Shaman.Enhancement.MythicPlus.Fortified.Legendarys = {
 [1] = 335902,
 [2] = 335897,
 [3] = 336738,

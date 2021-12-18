@@ -1,4 +1,4 @@
-AmIReady.Priest.Discipline.MythicPlus.Fortified.Talents = {
+DoReady.Priest.Discipline.MythicPlus.Fortified.Talents = {
 [1] = 265259,
 [2] = 121536,
 [3] = 129250,

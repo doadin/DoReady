@@ -1,4 +1,4 @@
-AmIReady.Warlock.Demonology.MythicPlus.Fortified.Talents = {
+DoReady.Warlock.Demonology.MythicPlus.Fortified.Talents = {
 [1] = 264078,
 [2] = 205145,
 [3] = 108416,

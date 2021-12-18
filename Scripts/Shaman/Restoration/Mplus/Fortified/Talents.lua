@@ -1,4 +1,4 @@
-AmIReady.Shaman.Restoration.MythicPlus.Fortified.Talents = {
+DoReady.Shaman.Restoration.MythicPlus.Fortified.Talents = {
 [1] = 200071,
 [2] = 108283,
 [3] = 260878,

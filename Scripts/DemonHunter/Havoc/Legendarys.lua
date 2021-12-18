@@ -1,4 +1,4 @@
-AmIReady.DemonHunter.Havoc.Raid.Legendarys = {
+DoReady.DemonHunter.Havoc.Raid.Legendarys = {
 [1] = 346279,
 [2] = 355886,
 [3] = 337504,

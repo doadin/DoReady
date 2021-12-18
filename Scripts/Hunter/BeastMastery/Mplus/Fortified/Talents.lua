@@ -1,4 +1,4 @@
-AmIReady.Hunter.BeastMastery.MythicPlus.Fortified.Talents = {
+DoReady.Hunter.BeastMastery.MythicPlus.Fortified.Talents = {
 [1] = 267116,
 [2] = 193532,
 [3] = 199483,

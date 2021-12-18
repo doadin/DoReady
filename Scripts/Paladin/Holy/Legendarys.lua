@@ -1,4 +1,4 @@
-AmIReady.Paladin.Holy.Raid.Legendarys = {
+DoReady.Paladin.Holy.Raid.Legendarys = {
 [1] = 340458,
 [2] = 337825,
 [3] = 355099,

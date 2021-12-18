@@ -1,4 +1,4 @@
-AmIReady.Warlock.Destruction.Raid.Legendarys = {
+DoReady.Warlock.Destruction.Raid.Legendarys = {
 [1] = 337166,
 [2] = 337020,
 [3] = 356344,

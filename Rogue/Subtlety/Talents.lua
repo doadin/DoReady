@@ -1,4 +1,4 @@
-AmIReady.Rogue.Subtlety.Raid.Talents = {
+DoReady.Rogue.Subtlety.Raid.Talents = {
 [1] = 193537,
 [2] = 108209,
 [3] = 193531,

@@ -1,4 +1,4 @@
-AmIReady.Paladin.Retribution.MythicPlus.Fortified.Talents = {
+DoReady.Paladin.Retribution.MythicPlus.Fortified.Talents = {
 [1] = 343527,
 [2] = 326732,
 [3] = 234299,

@@ -1,4 +1,4 @@
-AmIReady.DemonHunter.Vengeance.MythicPlus.Fortified.Talents = {
+DoReady.DemonHunter.Vengeance.MythicPlus.Fortified.Talents = {
 [1] = 207548,
 [2] = 227174,
 [3] = 247454,

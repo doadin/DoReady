@@ -1,4 +1,4 @@
-AmIReady.Warrior.Fury.MythicPlus.Fortified.Talents = {
+DoReady.Warrior.Fury.MythicPlus.Fortified.Talents = {
 [1] = 215568,
 [2] = 107570,
 [3] = 206315,

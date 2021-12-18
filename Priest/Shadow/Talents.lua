@@ -1,4 +1,4 @@
-AmIReady.Priest.Shadow.Raid.Talents = {
+DoReady.Priest.Shadow.Raid.Talents = {
 [1] = 193195,
 [2] = 64129,
 [3] = 109142,

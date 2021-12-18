@@ -1,4 +1,4 @@
-AmIReady.Warlock.Demonology.Raid.Talents = {
+DoReady.Warlock.Demonology.Raid.Talents = {
 [1] = 267171,
 [2] = 205145,
 [3] = 108416,

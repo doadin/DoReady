@@ -1,4 +1,4 @@
-AmIReady.Hunter.Marksmanship.Raid.Legendarys = {
+DoReady.Hunter.Marksmanship.Raid.Legendarys = {
 [1] = 336870,
 [2] = 356375,
 [3] = 336867,

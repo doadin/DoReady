@@ -1,4 +1,4 @@
-AmIReady.Priest.Holy.Raid.Talents = {
+DoReady.Priest.Holy.Raid.Talents = {
 [1] = 200128,
 [2] = 121536,
 [3] = 238136,

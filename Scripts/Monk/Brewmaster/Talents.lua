@@ -1,4 +1,4 @@
-AmIReady.Monk.Brewmaster.Raid.Talents = {
+DoReady.Monk.Brewmaster.Raid.Talents = {
 [1] = 115098,
 [2] = 116841,
 [3] = 325093,

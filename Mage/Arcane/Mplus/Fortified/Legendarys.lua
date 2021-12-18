@@ -1,4 +1,4 @@
-AmIReady.Mage.Arcane.MythicPlus.Fortified.Legendarys = {
+DoReady.Mage.Arcane.MythicPlus.Fortified.Legendarys = {
 [1] = 332769,
 [2] = 332892,
 [3] = 332928,

@@ -1,4 +1,4 @@
-AmIReady.Shaman.Restoration.Raid.Legendarys = {
+DoReady.Shaman.Restoration.Raid.Legendarys = {
 [1] = 335889,
 [2] = 356250,
 [3] = 356218,

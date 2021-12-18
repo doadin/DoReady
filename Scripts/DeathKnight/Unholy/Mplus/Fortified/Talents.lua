@@ -1,4 +1,4 @@
-AmIReady.DeathKnight.Unholy.MythicPlus.Fortified.Talents = {
+DoReady.DeathKnight.Unholy.MythicPlus.Fortified.Talents = {
 [1] = 207311,
 [2] = 115989,
 [3] = 108194,

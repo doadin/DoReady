@@ -1,4 +1,4 @@
-AmIReady.Druid.Balance.Raid.Talents = {
+DoReady.Druid.Balance.Raid.Talents = {
 [1] = 202430,
 [2] = 102401,
 [3] = 197492,

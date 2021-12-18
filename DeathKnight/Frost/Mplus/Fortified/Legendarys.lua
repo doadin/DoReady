@@ -1,4 +1,4 @@
-AmIReady.DeathKnight.Frost.MythicPlus.Fortified.Legendarys = {
+DoReady.DeathKnight.Frost.MythicPlus.Fortified.Legendarys = {
 [1] = 341724,
 [2] = 353822,
 [3] = 334678,

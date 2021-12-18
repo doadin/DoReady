@@ -1,4 +1,4 @@
-AmIReady.Druid.Guardian.Raid.Talents = {
+DoReady.Druid.Guardian.Raid.Talents = {
 [1] = 203953,
 [2] = 108238,
 [3] = 202155,

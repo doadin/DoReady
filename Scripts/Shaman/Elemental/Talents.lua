@@ -1,4 +1,4 @@
-AmIReady.Shaman.Elemental.Raid.Talents = {
+DoReady.Shaman.Elemental.Raid.Talents = {
 [1] = 333919,
 [2] = 117014,
 [3] = 260878,

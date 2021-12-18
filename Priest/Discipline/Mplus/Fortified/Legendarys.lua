@@ -1,4 +1,4 @@
-AmIReady.Priest.Discipline.MythicPlus.Fortified.Legendarys = {
+DoReady.Priest.Discipline.MythicPlus.Fortified.Legendarys = {
 [1] = 356395,
 [2] = 336897,
 [3] = 336067,

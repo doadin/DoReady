@@ -1,4 +1,4 @@
-AmIReady.Mage.Fire.MythicPlus.Fortified.Talents = {
+DoReady.Mage.Fire.MythicPlus.Fortified.Talents = {
 [1] = 269644,
 [2] = 212653,
 [3] = 116011,

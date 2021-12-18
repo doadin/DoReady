@@ -1,4 +1,4 @@
-AmIReady.Rogue.Subtlety.Raid.Legendarys = {
+DoReady.Rogue.Subtlety.Raid.Legendarys = {
 [1] = 354703,
 [2] = 354837,
 [3] = 340092,

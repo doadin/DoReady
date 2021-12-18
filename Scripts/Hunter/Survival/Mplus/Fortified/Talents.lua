@@ -1,4 +1,4 @@
-AmIReady.Hunter.Survival.MythicPlus.Fortified.Talents = {
+DoReady.Hunter.Survival.MythicPlus.Fortified.Talents = {
 [1] = 269737,
 [2] = 264332,
 [3] = 199483,

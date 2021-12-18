@@ -1,4 +1,4 @@
-AmIReady.Warlock.Affliction.Raid.Talents = {
+DoReady.Warlock.Affliction.Raid.Talents = {
 [1] = 198590,
 [2] = 63106,
 [3] = 108416,

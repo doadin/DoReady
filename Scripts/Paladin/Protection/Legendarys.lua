@@ -1,4 +1,4 @@
-AmIReady.Paladin.Protection.Raid.Legendarys = {
+DoReady.Paladin.Protection.Raid.Legendarys = {
 [1] = 337594,
 [2] = 355098,
 [3] = 337681,

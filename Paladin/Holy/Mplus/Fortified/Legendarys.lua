@@ -1,4 +1,4 @@
-AmIReady.Paladin.Holy.MythicPlus.Fortified.Legendarys = {
+DoReady.Paladin.Holy.MythicPlus.Fortified.Legendarys = {
 [1] = 337594,
 [2] = 337638,
 [3] = 337825,

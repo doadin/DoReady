@@ -1,4 +1,4 @@
-AmIReady.Paladin.Protection.MythicPlus.Fortified.Talents = {
+DoReady.Paladin.Protection.MythicPlus.Fortified.Talents = {
 [1] = 152261,
 [2] = 203776,
 [3] = 115750,
