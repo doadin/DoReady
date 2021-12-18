@@ -387,7 +387,7 @@ local function GetTalents(_,event, one, two)
         end
 
         local numlegendarystosugest = 0
-        if not legendaryfound then
+        if legendaryfound == false then
             local LegendaryHeading = AceGUI:Create("InlineGroup")
             LegendaryHeading:SetLayout("Flow")
             numlegendarystosugest = 0
@@ -452,7 +452,7 @@ local function GetTalents(_,event, one, two)
             MainFrame:SetHeight(MainFrameHeightChange)
         end
 
-        if numtalentschanged == 0 and MissingEnchantsText == "" then
+        if numtalentschanged == 0 and MissingEnchantsText == "" and legendaryfound == false then
             --local NoChangesHeading = AceGUI:Create("InlineGroup")
             --NoChangesHeading:SetLayout("Flow")
             --NoChangesHeading:SetWidth(800)
@@ -472,7 +472,7 @@ local function GetTalents(_,event, one, two)
         end
 
         MainFrame:DoLayout()
-        MainFrame:Show()
+        --MainFrame:Show()
         --if MainFrame:IsShown() then
         --    MainFrame:Hide()
         --else
