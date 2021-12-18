@@ -378,9 +378,11 @@ local function GetTalents(_,event, one, two)
             --print(type(itemLink))
             if itemLink and type(itemLink) == "string" and itemLink ~= "" then
                 local itemName, _, _, ilvl = GetItemInfo(itemLink)
-                for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
-                    if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
-                        legendaryfound = true
+                if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
+                    for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                        if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
+                            legendaryfound = true
+                        end
                     end
                 end
             end
@@ -391,8 +393,10 @@ local function GetTalents(_,event, one, two)
             local LegendaryHeading = AceGUI:Create("InlineGroup")
             LegendaryHeading:SetLayout("Flow")
             numlegendarystosugest = 0
-            for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
-                numlegendarystosugest = numlegendarystosugest + 1
+            if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
+                for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                    numlegendarystosugest = numlegendarystosugest + 1
+                end
             end
             LegendaryHeading:SetWidth(tonumber(numlegendarystosugest*120))
             LegendaryHeading:SetTitle("Suggested Legendarys")
@@ -400,23 +404,25 @@ local function GetTalents(_,event, one, two)
             LegendaryHeading:ReleaseChildren()
 
             local WrongLegendaryText = ""
-            for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
-                WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
-                local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
-                local WrongLegendaryIcon = AceGUI:Create("Icon")
-                WrongLegendaryIcon:SetImage(WrongLegendaryWidgetIcon)
-                WrongLegendaryIcon:SetImageSize(25,25)
-                WrongLegendaryIcon:SetLabel(GetSpellInfo(spellID))
-                WrongLegendaryIcon.tooltipText = GetSpellInfo(spellID)
-                WrongLegendaryIcon:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(WrongLegendaryIcon.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(GetSpellDescription(spellID),1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                WrongLegendaryIcon:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                LegendaryHeading:AddChild(WrongLegendaryIcon)
+            if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
+                for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                    WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
+                    local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
+                    local WrongLegendaryIcon = AceGUI:Create("Icon")
+                    WrongLegendaryIcon:SetImage(WrongLegendaryWidgetIcon)
+                    WrongLegendaryIcon:SetImageSize(25,25)
+                    WrongLegendaryIcon:SetLabel(GetSpellInfo(spellID))
+                    WrongLegendaryIcon.tooltipText = GetSpellInfo(spellID)
+                    WrongLegendaryIcon:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(WrongLegendaryIcon.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(GetSpellDescription(spellID),1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    WrongLegendaryIcon:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    LegendaryHeading:AddChild(WrongLegendaryIcon)
+                end
             end
             --WrongLegendaryTextLable:SetText("We suggest using one of the following legendarys:" .. WrongLegendaryText)
             --LegendaryHeading:AddChild(WrongLegendaryTextLable)
@@ -498,8 +504,7 @@ text = "DoReady",
 icon = "Interface\\Icons\\spell_nature_moonkey",
 OnTooltipShow = function(tooltip)
     tooltip:SetText("DoReady")
-    tooltip:AddLine("Left Click To Show Your Character/Guild Info", 1, 1, 1)
-    tooltip:AddLine("Right Click To Show Your Characters Season Bests", 1, 1, 1)
+    tooltip:AddLine("Left Click To Show Your Character Info", 1, 1, 1)
     tooltip:Show()
 end,
 OnClick = function(clickedframe, button)
