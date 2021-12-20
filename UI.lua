@@ -7,6 +7,8 @@ MainFrame:SetWidth(850)
 MainFrame:SetHeight(150)
 MainFrame:Hide()
 
+local instanceTypeSelector
+
 local function GetTalents(_,event, one, two)
     MainFrame:ReleaseChildren()
 
@@ -38,13 +40,53 @@ local function GetTalents(_,event, one, two)
         --    end
         --end
 
+        if instanceType == "none" or instanceType ~= "raid" or instanceType ~= "party" then
+            if event == "DoReady_MINIMAPBUTTON" or
+                event == "PLAYER_SPECIALIZATION_CHANGED" or
+                event == "PLAYER_TALENT_UPDATE" or
+                event == "PLAYER_PVP_TALENT_UPDATE" or
+                event == "ACTIVE_TALENT_GROUP_CHANGED" or
+                event == "PLAYER_EQUIPMENT_CHANGED" then
+                --local instanceTypeHeading = AceGUI:Create("InlineGroup")
+                --instanceTypeHeading:SetLayout("Flow")
+                --instanceTypeHeading:SetWidth(800)
+                --instanceTypeHeading:SetTitle("Select Content Type:")
+                --MainFrame:AddChild(instanceTypeHeading)
+                --instanceTypeHeading:ReleaseChildren()
+                instanceTypeSelector = AceGUI:Create("Dropdown")
+                instanceTypeSelector:AddItem(1,"Raid")
+                instanceTypeSelector:AddItem(2,"MythicPlus")
+                --if instanceTypeSelector:GetValue() == nil then
+                --    instanceTypeSelector:SetValue(2)
+                --end
+                if one then
+                    instanceTypeSelector:SetValue(tonumber(one))
+                else
+                    instanceTypeSelector:SetValue(2)
+                end
+                instanceTypeSelector:SetValue(one)
+                MainFrame:AddChild(instanceTypeSelector)
+                if instanceTypeSelector:GetValue() == 1 then
+                    instanceType = "Raid"
+                end
+                if instanceTypeSelector:GetValue() == 2 then
+                    instanceType = "MythicPlus"
+                end
+                instanceTypeSelector:SetCallback("OnValueChanged", function(_,_,choice) GetTalents(nil, "DoReady_MINIMAPBUTTON", choice)print(choice) end)
+            end
+        end
+        if instanceTypeSelector:GetValue() ~= 1 or instanceTypeSelector:GetValue() ~= 2 then
+            MainFrame:ReleaseChildren()
+            return
+        end
+
         if instanceType == "none" or instanceType == "party" then
             instanceType = "MythicPlus"
         elseif instanceType == "raid" then
             instanceType = "Raid"
         end
         --TODO: Fix Raid
-        instanceType = "MythicPlus"
+        --instanceType = "MythicPlus"
         local CurrentClass = ClassIndexTable[classIndex]
         local id, SpecName = GetSpecializationInfo(GetSpecialization())
         local CurrentAffixes = C_MythicPlus.GetCurrentAffixes()
@@ -55,14 +97,26 @@ local function GetTalents(_,event, one, two)
             local available, selected = GetTalentTierInfo(talentTier, 1)
             local activeSpec = GetSpecialization()
             local talentID, name, texture, selected, available, spellID, unknown, row, column, known, grantedByAura = GetTalentInfoBySpecialization(activeSpec, talentTier, selected)
-            local ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
-            else
-               --print("DoReady We Sugest Using: ", ProperSpell)
-               NeedTalentsWidget = true
+            local ProperSpell
+            if instanceType == "Raid" then
+                ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][talentTier])
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][talentTier] == spellID then
+                else
+                   --print("DoReady We Sugest Using: ", ProperSpell)
+                   NeedTalentsWidget = true
+                end
+            end
+            if instanceType == "MythicPlus" then
+                ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
+                else
+                   --print("DoReady We Sugest Using: ", ProperSpell)
+                   NeedTalentsWidget = true
+                end
             end
          end
 
+        -- Talent Code Starts Here
         local numtalentschanged = 0
         if NeedTalentsWidget then
             local TalentHeading = AceGUI:Create("InlineGroup")
@@ -84,210 +138,387 @@ local function GetTalents(_,event, one, two)
             available, selected = GetTalentTierInfo(1, 1)
             activeSpec = GetSpecialization()
 
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 1, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1] == spellID then
-                --TalentOne:SetImage()
-                --TalentOne:SetImageSize(0,0)
-                --TalentOne:SetLabel("")
-            else
-                TalentOne = AceGUI:Create("Icon")
-                --TalentOne:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentOne)
-                local TalentOnename, _, TalentOnefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
-                local TalentOnedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
-                TalentOne:SetImage(TalentOnefiledataid)
-                TalentOne:SetImageSize(25,25)
-                TalentOne:SetLabel("Level 15: " .. TalentOnename)
-                TalentOne:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentOne.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentOnedescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentOne:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
+            if instanceType == "MythicPlus" then
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 1, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1] == spellID then
+                    --TalentOne:SetImage()
+                    --TalentOne:SetImageSize(0,0)
+                    --TalentOne:SetLabel("")
+                else
+                    TalentOne = AceGUI:Create("Icon")
+                    --TalentOne:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentOne)
+                    local TalentOnename, _, TalentOnefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
+                    local TalentOnedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][1])
+                    TalentOne:SetImage(TalentOnefiledataid)
+                    TalentOne:SetImageSize(25,25)
+                    TalentOne:SetLabel("Level 15: " .. TalentOnename)
+                    TalentOne:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentOne.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentOnedescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentOne:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(2, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 2, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2] == spellID then
+                    --TalentTwo:SetImage()
+                    --TalentTwo:SetImageSize(0,0)
+                    --TalentTwo:SetLabel("")
+                else
+                    TalentTwo = AceGUI:Create("Icon")
+                    --TalentTwo:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentTwo)
+                    local TalentTwoname, _, TalentTwofiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
+                    local TalentTwodescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
+                    TalentTwo:SetImage(TalentTwofiledataid)
+                    TalentTwo:SetImageSize(25,25)
+                    TalentTwo:SetLabel("Level 25: " .. TalentTwoname)
+                    TalentTwo:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentTwo.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentTwodescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentTwo:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(3, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 3, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3] == spellID then
+                    --TalentThree:SetImage()
+                    --TalentThree:SetImageSize(0,0)
+                    --TalentThree:SetLabel("")
+                else
+                    TalentThree = AceGUI:Create("Icon")
+                    --TalentThree:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentThree)
+                    local TalentThreename, _, TalentThreefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
+                    local TalentThreedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
+                    TalentThree:SetImage(TalentThreefiledataid)
+                    TalentThree:SetImageSize(25,25)
+                    TalentThree:SetLabel("Level 30: " .. TalentThreename)
+                    TalentThree:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentThree.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentThreedescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentThree:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(4, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 4, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4] == spellID then
+                    --TalentFour:SetImage()
+                    --TalentFour:SetImageSize(0,0)
+                    --TalentFour:SetLabel("")
+                else
+                    TalentFour = AceGUI:Create("Icon")
+                    --TalentFour:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentFour)
+                    local TalentFourname, _, TalentFourfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
+                    local TalentFourdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
+                    TalentFour:SetImage(TalentFourfiledataid)
+                    TalentFour:SetImageSize(25,25)
+                    TalentFour:SetLabel("Level 35: " .. TalentFourname)
+                    TalentFour.tooltipText = TalentFourdescription
+                    TalentFour:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentFour.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentFourdescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentFour:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(5, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 5, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5] == spellID then
+                    --TalentFive:SetImage()
+                    --TalentFive:SetImageSize(0,0)
+                    --TalentFive:SetLabel("")
+                else
+                    TalentFive = AceGUI:Create("Icon")
+                    --TalentFive:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentFive)    
+                    local TalentFivename, _, TalentFivefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
+                    local TalentFivedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
+                    TalentFive:SetImage(TalentFivefiledataid)
+                    TalentFive:SetImageSize(25,25)
+                    TalentFive:SetLabel("Level 40: " .. TalentFivename)
+                    TalentFive.tooltipText = TalentFivedescription
+                    TalentFive:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentFive.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentFivedescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentFive:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(6, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 6, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6] == spellID then
+                    --TalentSix:SetImage()
+                    --TalentSix:SetImageSize(0,0)
+                    --TalentSix:SetLabel("")
+                else
+                    TalentSix = AceGUI:Create("Icon")
+                    --TalentSix:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentSix)
+                    local TalentSixname, _, TalentSixfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
+                    local TalentSixdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
+                    TalentSix:SetImage(TalentSixfiledataid)
+                    TalentSix:SetImageSize(25,25)
+                    TalentSix:SetLabel("Level 45: " .. TalentSixname)
+                    TalentSix.tooltipText = TalentSixdescription
+                    TalentSix:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentSix.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentSixdescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentSix:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(7, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 7, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7] == spellID then
+                    --TalentSeven:SetImage()
+                    --TalentSeven:SetImageSize(0,0)
+                    --TalentSeven:SetLabel("")
+                else
+                    TalentSeven = AceGUI:Create("Icon")
+                    --TalentSeven:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentSeven)    
+                    local TalentSevenname, _, TalentSevenfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
+                    local TalentSevendescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
+                    TalentSeven:SetImage(TalentSevenfiledataid)
+                    TalentSeven:SetImageSize(25,25)
+                    TalentSeven:SetLabel("Level 50: " .. TalentSevenname)
+                    TalentSeven.tooltipText = TalentSevendescription
+                    TalentSeven:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentSeven.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentSevendescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentSeven:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+                TalentHeading:SetWidth(numtalentschanged * 125)
+                TalentHeading:DoLayout()
             end
 
-            available, selected = GetTalentTierInfo(2, 1)
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 2, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2] == spellID then
-                --TalentTwo:SetImage()
-                --TalentTwo:SetImageSize(0,0)
-                --TalentTwo:SetLabel("")
-            else
-                TalentTwo = AceGUI:Create("Icon")
-                --TalentTwo:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentTwo)
-                local TalentTwoname, _, TalentTwofiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
-                local TalentTwodescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][2])
-                TalentTwo:SetImage(TalentTwofiledataid)
-                TalentTwo:SetImageSize(25,25)
-                TalentTwo:SetLabel("Level 25: " .. TalentTwoname)
-                TalentTwo:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentTwo.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentTwodescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentTwo:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
+            if instanceType == "Raid" then
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 1, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][1] == spellID then
+                    --TalentOne:SetImage()
+                    --TalentOne:SetImageSize(0,0)
+                    --TalentOne:SetLabel("")
+                else
+                    TalentOne = AceGUI:Create("Icon")
+                    --TalentOne:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentOne)
+                    local TalentOnename, _, TalentOnefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][1])
+                    local TalentOnedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][1])
+                    TalentOne:SetImage(TalentOnefiledataid)
+                    TalentOne:SetImageSize(25,25)
+                    TalentOne:SetLabel("Level 15: " .. TalentOnename)
+                    TalentOne:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentOne.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentOnedescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentOne:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(2, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 2, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][2] == spellID then
+                    --TalentTwo:SetImage()
+                    --TalentTwo:SetImageSize(0,0)
+                    --TalentTwo:SetLabel("")
+                else
+                    TalentTwo = AceGUI:Create("Icon")
+                    --TalentTwo:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentTwo)
+                    local TalentTwoname, _, TalentTwofiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][2])
+                    local TalentTwodescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][2])
+                    TalentTwo:SetImage(TalentTwofiledataid)
+                    TalentTwo:SetImageSize(25,25)
+                    TalentTwo:SetLabel("Level 25: " .. TalentTwoname)
+                    TalentTwo:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentTwo.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentTwodescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentTwo:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(3, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 3, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][3] == spellID then
+                    --TalentThree:SetImage()
+                    --TalentThree:SetImageSize(0,0)
+                    --TalentThree:SetLabel("")
+                else
+                    TalentThree = AceGUI:Create("Icon")
+                    --TalentThree:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentThree)
+                    local TalentThreename, _, TalentThreefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][3])
+                    local TalentThreedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][3])
+                    TalentThree:SetImage(TalentThreefiledataid)
+                    TalentThree:SetImageSize(25,25)
+                    TalentThree:SetLabel("Level 30: " .. TalentThreename)
+                    TalentThree:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentThree.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentThreedescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentThree:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(4, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 4, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][4] == spellID then
+                    --TalentFour:SetImage()
+                    --TalentFour:SetImageSize(0,0)
+                    --TalentFour:SetLabel("")
+                else
+                    TalentFour = AceGUI:Create("Icon")
+                    --TalentFour:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentFour)
+                    local TalentFourname, _, TalentFourfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][4])
+                    local TalentFourdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][4])
+                    TalentFour:SetImage(TalentFourfiledataid)
+                    TalentFour:SetImageSize(25,25)
+                    TalentFour:SetLabel("Level 35: " .. TalentFourname)
+                    TalentFour.tooltipText = TalentFourdescription
+                    TalentFour:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentFour.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentFourdescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentFour:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(5, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 5, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][5] == spellID then
+                    --TalentFive:SetImage()
+                    --TalentFive:SetImageSize(0,0)
+                    --TalentFive:SetLabel("")
+                else
+                    TalentFive = AceGUI:Create("Icon")
+                    --TalentFive:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentFive)    
+                    local TalentFivename, _, TalentFivefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][5])
+                    local TalentFivedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][5])
+                    TalentFive:SetImage(TalentFivefiledataid)
+                    TalentFive:SetImageSize(25,25)
+                    TalentFive:SetLabel("Level 40: " .. TalentFivename)
+                    TalentFive.tooltipText = TalentFivedescription
+                    TalentFive:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentFive.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentFivedescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentFive:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(6, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 6, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][6] == spellID then
+                    --TalentSix:SetImage()
+                    --TalentSix:SetImageSize(0,0)
+                    --TalentSix:SetLabel("")
+                else
+                    TalentSix = AceGUI:Create("Icon")
+                    --TalentSix:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentSix)
+                    local TalentSixname, _, TalentSixfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][6])
+                    local TalentSixdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][6])
+                    TalentSix:SetImage(TalentSixfiledataid)
+                    TalentSix:SetImageSize(25,25)
+                    TalentSix:SetLabel("Level 45: " .. TalentSixname)
+                    TalentSix.tooltipText = TalentSixdescription
+                    TalentSix:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentSix.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentSixdescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentSix:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+    
+                available, selected = GetTalentTierInfo(7, 1)
+                _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 7, selected)
+                if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][7] == spellID then
+                    --TalentSeven:SetImage()
+                    --TalentSeven:SetImageSize(0,0)
+                    --TalentSeven:SetLabel("")
+                else
+                    TalentSeven = AceGUI:Create("Icon")
+                    --TalentSeven:SetImageSize(1,1)
+                    TalentHeading:AddChild(TalentSeven)    
+                    local TalentSevenname, _, TalentSevenfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][7])
+                    local TalentSevendescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Talents"][7])
+                    TalentSeven:SetImage(TalentSevenfiledataid)
+                    TalentSeven:SetImageSize(25,25)
+                    TalentSeven:SetLabel("Level 50: " .. TalentSevenname)
+                    TalentSeven.tooltipText = TalentSevendescription
+                    TalentSeven:SetCallback("OnEnter",function()
+                        GameTooltip:SetOwner(TalentSeven.frame, "ANCHOR_BOTTOM",0,-5)
+                        GameTooltip:SetText(TalentSevendescription,1,1,1,1)
+                        GameTooltip:Show()
+                    end)
+                    TalentSeven:SetCallback("OnLeave",function()
+                        GameTooltip:Hide()
+                    end)
+                    numtalentschanged = numtalentschanged + 1
+                end
+                TalentHeading:SetWidth(numtalentschanged * 125)
+                TalentHeading:DoLayout()
             end
 
-            available, selected = GetTalentTierInfo(3, 1)
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 3, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3] == spellID then
-                --TalentThree:SetImage()
-                --TalentThree:SetImageSize(0,0)
-                --TalentThree:SetLabel("")
-            else
-                TalentThree = AceGUI:Create("Icon")
-                --TalentThree:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentThree)
-                local TalentThreename, _, TalentThreefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
-                local TalentThreedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][3])
-                TalentThree:SetImage(TalentThreefiledataid)
-                TalentThree:SetImageSize(25,25)
-                TalentThree:SetLabel("Level 30: " .. TalentThreename)
-                TalentThree:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentThree.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentThreedescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentThree:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
-            end
-
-            available, selected = GetTalentTierInfo(4, 1)
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 4, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4] == spellID then
-                --TalentFour:SetImage()
-                --TalentFour:SetImageSize(0,0)
-                --TalentFour:SetLabel("")
-            else
-                TalentFour = AceGUI:Create("Icon")
-                --TalentFour:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentFour)
-                local TalentFourname, _, TalentFourfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
-                local TalentFourdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][4])
-                TalentFour:SetImage(TalentFourfiledataid)
-                TalentFour:SetImageSize(25,25)
-                TalentFour:SetLabel("Level 35: " .. TalentFourname)
-                TalentFour.tooltipText = TalentFourdescription
-                TalentFour:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentFour.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentFourdescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentFour:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
-            end
-
-            available, selected = GetTalentTierInfo(5, 1)
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 5, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5] == spellID then
-                --TalentFive:SetImage()
-                --TalentFive:SetImageSize(0,0)
-                --TalentFive:SetLabel("")
-            else
-                TalentFive = AceGUI:Create("Icon")
-                --TalentFive:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentFive)    
-                local TalentFivename, _, TalentFivefiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
-                local TalentFivedescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][5])
-                TalentFive:SetImage(TalentFivefiledataid)
-                TalentFive:SetImageSize(25,25)
-                TalentFive:SetLabel("Level 40: " .. TalentFivename)
-                TalentFive.tooltipText = TalentFivedescription
-                TalentFive:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentFive.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentFivedescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentFive:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
-            end
-
-            available, selected = GetTalentTierInfo(6, 1)
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 6, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6] == spellID then
-                --TalentSix:SetImage()
-                --TalentSix:SetImageSize(0,0)
-                --TalentSix:SetLabel("")
-            else
-                TalentSix = AceGUI:Create("Icon")
-                --TalentSix:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentSix)
-                local TalentSixname, _, TalentSixfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
-                local TalentSixdescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][6])
-                TalentSix:SetImage(TalentSixfiledataid)
-                TalentSix:SetImageSize(25,25)
-                TalentSix:SetLabel("Level 45: " .. TalentSixname)
-                TalentSix.tooltipText = TalentSixdescription
-                TalentSix:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentSix.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentSixdescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentSix:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
-            end
-
-            available, selected = GetTalentTierInfo(7, 1)
-            _, _, _, _, _, spellID, _, _, _, _, _ = GetTalentInfoBySpecialization(activeSpec, 7, selected)
-            if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7] == spellID then
-                --TalentSeven:SetImage()
-                --TalentSeven:SetImageSize(0,0)
-                --TalentSeven:SetLabel("")
-            else
-                TalentSeven = AceGUI:Create("Icon")
-                --TalentSeven:SetImageSize(1,1)
-                TalentHeading:AddChild(TalentSeven)    
-                local TalentSevenname, _, TalentSevenfiledataid = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
-                local TalentSevendescription = GetSpellDescription(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][7])
-                TalentSeven:SetImage(TalentSevenfiledataid)
-                TalentSeven:SetImageSize(25,25)
-                TalentSeven:SetLabel("Level 50: " .. TalentSevenname)
-                TalentSeven.tooltipText = TalentSevendescription
-                TalentSeven:SetCallback("OnEnter",function()
-                    GameTooltip:SetOwner(TalentSeven.frame, "ANCHOR_BOTTOM",0,-5)
-                    GameTooltip:SetText(TalentSevendescription,1,1,1,1)
-                    GameTooltip:Show()
-                end)
-                TalentSeven:SetCallback("OnLeave",function()
-                    GameTooltip:Hide()
-                end)
-                numtalentschanged = numtalentschanged + 1
-            end
-            TalentHeading:SetWidth(numtalentschanged * 125)
-            TalentHeading:DoLayout()
         end
 
-        --for talentTier = 1, MAX_TALENT_TIERS do
-        --    local available, selected = GetTalentTierInfo(talentTier, 1)
-        --    local id, SpecName = GetSpecializationInfo(GetSpecialization())
-        --    local activeSpec = GetSpecialization()
-        --    local talentID, name, texture, selected, available, spellID, unknown, row, column, known, grantedByAura = GetTalentInfoBySpecialization(activeSpec, talentTier, selected)
-        --    local ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
-        --    if _G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier] == spellID then
-        --    else
-        --        if MainFrame:IsShown() then
-        --            MainFrame:Hide()
-        --        else
-        --            MainFrame:Show()
-        --        end
-        --    end
-        --end
-
+        -- Enchant Code Starts Here
         local _, _, _, _, _, primaryStat = GetSpecializationInfo(GetSpecialization())
         local MissingEnchantsText = ""
         local numenchantsmissing = 0
@@ -369,72 +600,145 @@ local function GetTalents(_,event, one, two)
             EnchantHeading:DoLayout()
         end
 
-        local slots = {"Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "Tabard", "Wrist", "Waist", "Legs", "Feet", "Hands", "Finger0", "Finger1", "Trinket0", "Trinket1", "MainHand", "SecondaryHand"}
-        local legendaryfound = false
-        for slotNumber,slotName in pairs(slots) do
-            --print(slotNumber,slotName)
-            local slotID = GetInventorySlotInfo(slotName .. "slot")
-            local itemLink = GetInventoryItemLink("player", slotID)
-            --print(type(itemLink))
-            if itemLink and type(itemLink) == "string" and itemLink ~= "" then
-                local itemName, _, _, ilvl = GetItemInfo(itemLink)
+        -- Legendary Code Starts Here
+        local numlegendarystosugest
+        if instanceType == "MythicPlus" then
+            local slots = {"Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "Tabard", "Wrist", "Waist", "Legs", "Feet", "Hands", "Finger0", "Finger1", "Trinket0", "Trinket1", "MainHand", "SecondaryHand"}
+            local legendaryfound = false
+            for slotNumber,slotName in pairs(slots) do
+                --print(slotNumber,slotName)
+                local slotID = GetInventorySlotInfo(slotName .. "slot")
+                local itemLink = GetInventoryItemLink("player", slotID)
+                --print(type(itemLink))
+                if itemLink and type(itemLink) == "string" and itemLink ~= "" then
+                    local itemName, _, _, ilvl = GetItemInfo(itemLink)
+                    if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
+                        for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                            if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
+                                legendaryfound = true
+                            end
+                        end
+                    else
+                        legendaryfound = true
+                        print("error scanning for legendary", CurrentClass, SpecName:gsub("%s+", ""), instanceType, AffixOnename)
+                    end
+                end
+            end
+    
+            numlegendarystosugest = 0
+            local WrongLegendaryText = ""
+            local LegendaryHeading
+            if legendaryfound == false then
+                --print(legendaryfound)
+                LegendaryHeading = AceGUI:Create("InlineGroup")
+                LegendaryHeading:SetLayout("Flow")
+                numlegendarystosugest = 0
                 if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
                     for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
-                        if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
-                            legendaryfound = true
-                        end
+                        numlegendarystosugest = numlegendarystosugest + 1
                     end
-                else
-                    legendaryfound = true
-                    print("error scanning for legendary", CurrentClass, SpecName:gsub("%s+", ""), instanceType, AffixOnename)
                 end
+                LegendaryHeading:SetWidth(tonumber(numlegendarystosugest*120))
+                LegendaryHeading:SetTitle("Suggested Legendarys")
+                MainFrame:AddChild(LegendaryHeading)
+                LegendaryHeading:ReleaseChildren()
+    
+                WrongLegendaryText = ""
+                if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
+                    for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
+                        WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
+                        local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
+                        local WrongLegendaryIcon = AceGUI:Create("Icon")
+                        WrongLegendaryIcon:SetImage(WrongLegendaryWidgetIcon)
+                        WrongLegendaryIcon:SetImageSize(25,25)
+                        WrongLegendaryIcon:SetLabel(GetSpellInfo(spellID))
+                        WrongLegendaryIcon.tooltipText = GetSpellInfo(spellID)
+                        WrongLegendaryIcon:SetCallback("OnEnter",function()
+                            GameTooltip:SetOwner(WrongLegendaryIcon.frame, "ANCHOR_BOTTOM",0,-5)
+                            GameTooltip:SetText(GetSpellDescription(spellID),1,1,1,1)
+                            GameTooltip:Show()
+                        end)
+                        WrongLegendaryIcon:SetCallback("OnLeave",function()
+                            GameTooltip:Hide()
+                        end)
+                        LegendaryHeading:AddChild(WrongLegendaryIcon)
+                    end
+                end
+                --WrongLegendaryTextLable:SetText("We suggest using one of the following legendarys:" .. WrongLegendaryText)
+                --LegendaryHeading:AddChild(WrongLegendaryTextLable)
+                LegendaryHeading:DoLayout()
             end
         end
 
-        local numlegendarystosugest = 0
-        local WrongLegendaryText = ""
-        local LegendaryHeading
-        if legendaryfound == false then
-            --print(legendaryfound)
-            LegendaryHeading = AceGUI:Create("InlineGroup")
-            LegendaryHeading:SetLayout("Flow")
+        if instanceType == "Raid" then
+            local slots = {"Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "Tabard", "Wrist", "Waist", "Legs", "Feet", "Hands", "Finger0", "Finger1", "Trinket0", "Trinket1", "MainHand", "SecondaryHand"}
+            local legendaryfound = false
+            for slotNumber,slotName in pairs(slots) do
+                --print(slotNumber,slotName)
+                local slotID = GetInventorySlotInfo(slotName .. "slot")
+                local itemLink = GetInventoryItemLink("player", slotID)
+                --print(type(itemLink))
+                if itemLink and type(itemLink) == "string" and itemLink ~= "" then
+                    local itemName, _, _, ilvl = GetItemInfo(itemLink)
+                    if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Legendarys"]) == "table" then
+                        for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Legendarys"]) do
+                            if string.match(itemName:lower(), string.lower(GetSpellInfo(spellID))) then
+                                legendaryfound = true
+                            end
+                        end
+                    else
+                        legendaryfound = true
+                        print("error scanning for legendary", CurrentClass, SpecName:gsub("%s+", ""), instanceType, AffixOnename)
+                    end
+                end
+            end
+    
             numlegendarystosugest = 0
-            if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
-                for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
-                    numlegendarystosugest = numlegendarystosugest + 1
+            local WrongLegendaryText = ""
+            local LegendaryHeading
+            if legendaryfound == false then
+                --print(legendaryfound)
+                LegendaryHeading = AceGUI:Create("InlineGroup")
+                LegendaryHeading:SetLayout("Flow")
+                numlegendarystosugest = 0
+                if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Legendarys"]) == "table" then
+                    for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Legendarys"]) do
+                        numlegendarystosugest = numlegendarystosugest + 1
+                    end
                 end
-            end
-            LegendaryHeading:SetWidth(tonumber(numlegendarystosugest*120))
-            LegendaryHeading:SetTitle("Suggested Legendarys")
-            MainFrame:AddChild(LegendaryHeading)
-            LegendaryHeading:ReleaseChildren()
-
-            WrongLegendaryText = ""
-            if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
-                for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
-                    WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
-                    local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
-                    local WrongLegendaryIcon = AceGUI:Create("Icon")
-                    WrongLegendaryIcon:SetImage(WrongLegendaryWidgetIcon)
-                    WrongLegendaryIcon:SetImageSize(25,25)
-                    WrongLegendaryIcon:SetLabel(GetSpellInfo(spellID))
-                    WrongLegendaryIcon.tooltipText = GetSpellInfo(spellID)
-                    WrongLegendaryIcon:SetCallback("OnEnter",function()
-                        GameTooltip:SetOwner(WrongLegendaryIcon.frame, "ANCHOR_BOTTOM",0,-5)
-                        GameTooltip:SetText(GetSpellDescription(spellID),1,1,1,1)
-                        GameTooltip:Show()
-                    end)
-                    WrongLegendaryIcon:SetCallback("OnLeave",function()
-                        GameTooltip:Hide()
-                    end)
-                    LegendaryHeading:AddChild(WrongLegendaryIcon)
+                LegendaryHeading:SetWidth(tonumber(numlegendarystosugest*120))
+                LegendaryHeading:SetTitle("Suggested Legendarys")
+                MainFrame:AddChild(LegendaryHeading)
+                LegendaryHeading:ReleaseChildren()
+    
+                WrongLegendaryText = ""
+                if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Legendarys"]) == "table" then
+                    for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType]["Legendarys"]) do
+                        WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
+                        local _,_,WrongLegendaryWidgetIcon = GetSpellInfo(spellID)
+                        local WrongLegendaryIcon = AceGUI:Create("Icon")
+                        WrongLegendaryIcon:SetImage(WrongLegendaryWidgetIcon)
+                        WrongLegendaryIcon:SetImageSize(25,25)
+                        WrongLegendaryIcon:SetLabel(GetSpellInfo(spellID))
+                        WrongLegendaryIcon.tooltipText = GetSpellInfo(spellID)
+                        WrongLegendaryIcon:SetCallback("OnEnter",function()
+                            GameTooltip:SetOwner(WrongLegendaryIcon.frame, "ANCHOR_BOTTOM",0,-5)
+                            GameTooltip:SetText(GetSpellDescription(spellID),1,1,1,1)
+                            GameTooltip:Show()
+                        end)
+                        WrongLegendaryIcon:SetCallback("OnLeave",function()
+                            GameTooltip:Hide()
+                        end)
+                        LegendaryHeading:AddChild(WrongLegendaryIcon)
+                    end
                 end
+                --WrongLegendaryTextLable:SetText("We suggest using one of the following legendarys:" .. WrongLegendaryText)
+                --LegendaryHeading:AddChild(WrongLegendaryTextLable)
+                LegendaryHeading:DoLayout()
             end
-            --WrongLegendaryTextLable:SetText("We suggest using one of the following legendarys:" .. WrongLegendaryText)
-            --LegendaryHeading:AddChild(WrongLegendaryTextLable)
-            LegendaryHeading:DoLayout()
         end
 
+        -- Frame Sizeing Code Starts Here
         --MainFrame:SetHeight(0)
         local MainFrameHeightChange = 0
         local lengthneededforlegendaries =  tonumber(numlegendarystosugest*130)
@@ -488,10 +792,6 @@ local function GetTalents(_,event, one, two)
             MainFrame:SetHeight(MainFrameHeightChange)
         end
 
-        if LegendaryHeading then
-            print(LegendaryHeading:GetPoint())
-        end
-
         if numtalentschanged == 0 and MissingEnchantsText == "" and legendaryfound == true then
             --local NoChangesHeading = AceGUI:Create("InlineGroup")
             --NoChangesHeading:SetLayout("Flow")
@@ -530,6 +830,26 @@ local function GetTalents(_,event, one, two)
         --end
     end
 end
+
+--local function CreateDropDown()
+--    local instanceTypeSelector = AceGUI:Create("Dropdown")
+--    instanceTypeSelector:AddItem(1,"Raid")
+--    instanceTypeSelector:AddItem(2,"MythicPlus")
+--    instanceTypeSelector:SetValue(2)
+--    --MainFrame:AddChild(instanceTypeSelector)
+--    local instanceType
+--    if instanceTypeSelector:GetValue() == 1 then
+--        instanceType = "Raid"
+--    end
+--    if instanceTypeSelector:GetValue() == 2 then
+--        instanceType = "MythicPlus"
+--    end
+--    instanceTypeSelector:SetCallback("OnValueChanged", GetTalents(nil, "DoReady_MINIMAPBUTTON"))
+--end
+--
+--local CreateDropDownframe = CreateFrame("Frame")
+--CreateDropDownframe:RegisterEvent("PLAYER_ENTERING_WORLD")
+--CreateDropDownframe:SetScript("OnEvent", CreateDropDown)
 
 local eventframe = CreateFrame("Frame")
 eventframe:RegisterEvent("READY_CHECK")
