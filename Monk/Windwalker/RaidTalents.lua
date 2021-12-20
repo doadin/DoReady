@@ -1,4 +1,4 @@
-DoReady.Monk.Windwalker.Raid.Talants = {
+DoReady.Monk.Windwalker.Raid.Talents = {
 [1] = 123986,
 [2] = 116841,
 [3] = 261947,

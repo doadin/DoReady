@@ -1,4 +1,4 @@
-DoReady.Warrior.Fury.Raid.Talants = {
+DoReady.Warrior.Fury.Raid.Talents = {
 [1] = 280721,
 [2] = 103827,
 [3] = 206315,

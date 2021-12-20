@@ -1,4 +1,4 @@
-DoReady.Hunter.Survival.Raid.Talants = {
+DoReady.Hunter.Survival.Raid.Talents = {
 [1] = 269737,
 [2] = 264332,
 [3] = 270581,

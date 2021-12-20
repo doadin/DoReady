@@ -1,4 +1,4 @@
-DoReady.DemonHunter.Havoc.Raid.Talants = {
+DoReady.DemonHunter.Havoc.Raid.Talents = {
 [1] = 232893,
 [2] = 203555,
 [3] = 347461,

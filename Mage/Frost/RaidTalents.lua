@@ -1,4 +1,4 @@
-DoReady.Mage.Frost.Raid.Talants = {
+DoReady.Mage.Frost.Raid.Talents = {
 [1] = 205024,
 [2] = 212653,
 [3] = 116011,

@@ -1,4 +1,4 @@
-DoReady.Druid.Restoration.Raid.Talants = {
+DoReady.Druid.Restoration.Raid.Talents = {
 [1] = 207383,
 [2] = 102401,
 [3] = 197632,
