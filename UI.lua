@@ -53,7 +53,6 @@ local function GetTalents(_,event, one, two)
         local NeedTalentsWidget = false
         for talentTier = 1, MAX_TALENT_TIERS do
             local available, selected = GetTalentTierInfo(talentTier, 1)
-            local id, SpecName = GetSpecializationInfo(GetSpecialization())
             local activeSpec = GetSpecialization()
             local talentID, name, texture, selected, available, spellID, unknown, row, column, known, grantedByAura = GetTalentInfoBySpecialization(activeSpec, talentTier, selected)
             local ProperSpell = GetSpellInfo(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Talents"][talentTier])
@@ -291,36 +290,37 @@ local function GetTalents(_,event, one, two)
 
         local _, _, _, _, _, primaryStat = GetSpecializationInfo(GetSpecialization())
         local MissingEnchantsText = ""
+        local numenchantsmissing = 0
         -- primaryStat = 1=Strength, 2=Agility, 4=Intellect
         --ChestslotId = GetInventorySlotInfo("ChestSlot")
         local Chestlink = GetInventoryItemLink("player", INVSLOT_CHEST)
         if type(Chestlink) == "string" then
             local _, itemId, ChestenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Chestlink)
-            if ChestenchantId == "" then MissingEnchantsText = " Chest " end
+            if ChestenchantId == "" then MissingEnchantsText = " Chest " numenchantsmissing = numenchantsmissing + 1 end
         end
 
         local Cloaklink = GetInventoryItemLink("player", INVSLOT_BACK)
         if type(Cloaklink) == "string" then
             local _, itemId, CloakenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Cloaklink)
-            if CloakenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Cloak " end
+            if CloakenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Cloak " numenchantsmissing = numenchantsmissing + 1  end
         end
 
         local FingerOnelink = GetInventoryItemLink("player", INVSLOT_FINGER1)
         if type(FingerOnelink) == "string" then
             local _, itemId, FingerOneenchantId, gem1, gem2, gem3, gem4 = strsplit(":", FingerOnelink)
-            if FingerOneenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Finger 1 " end
+            if FingerOneenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Finger 1 " numenchantsmissing = numenchantsmissing + 1  end
         end
 
         local FingerTwolink = GetInventoryItemLink("player", INVSLOT_FINGER2)
         if type(FingerTwolink) == "string" then
             local _, itemId, FingerTwoenchantId, gem1, gem2, gem3, gem4 = strsplit(":", FingerTwolink)
-            if FingerTwoenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Finger 2 " end
+            if FingerTwoenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Finger 2 " numenchantsmissing = numenchantsmissing + 1  end
         end
 
         local MainHandlink = GetInventoryItemLink("player", INVSLOT_MAINHAND)
         if type(MainHandlink) == "string" then
             local _, itemId, MainHandenchantId, gem1, gem2, gem3, gem4 = strsplit(":", MainHandlink)
-            if MainHandenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Main Hand " end
+            if MainHandenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Main Hand " numenchantsmissing = numenchantsmissing + 1  end
         end
 
         local currentSpec = GetSpecialization()
@@ -328,14 +328,14 @@ local function GetTalents(_,event, one, two)
         local OffHandlink = GetInventoryItemLink("player", INVSLOT_OFFHAND)
         if type(OffHandlink) == "string" and ((CurrentClass == "Warrior" and currentSpecName == "Fury") or (CurrentClass == "DeathKnight" and currentSpecName == "Frost") or (CurrentClass == "DemonHunter") or (CurrentClass == "Rogue")) then
             local _, itemId, OffHandenchantId, gem1, gem2, gem3, gem4 = strsplit(":", OffHandlink)
-            if OffHandenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Off Hand " end
+            if OffHandenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Off Hand " numenchantsmissing = numenchantsmissing + 1  end
         end
 
         if primaryStat and primaryStat == 2 then
             local Feetlink = GetInventoryItemLink("player", INVSLOT_FEET)
             if type(Feetlink) == "string" then
                 local _, itemId, FeetenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Feetlink)
-                if FeetenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Feet " end
+                if FeetenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Feet " numenchantsmissing = numenchantsmissing + 1  end
             end
         end
 
@@ -343,7 +343,7 @@ local function GetTalents(_,event, one, two)
             local Handslink = GetInventoryItemLink("player", INVSLOT_HAND)
             if type(Handslink) == "string" then
                 local _, itemId, HandsenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Handslink)
-                if HandsenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Hands " end
+                if HandsenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Hands " numenchantsmissing = numenchantsmissing + 1  end
             end
         end
 
@@ -351,7 +351,7 @@ local function GetTalents(_,event, one, two)
             local Wristlink = GetInventoryItemLink("player", INVSLOT_WRIST)
             if type(Wristlink) == "string" then
                 local _, itemId, WristenchantId, gem1, gem2, gem3, gem4 = strsplit(":", Wristlink)
-                if WristenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Wrist " end
+                if WristenchantId == "" then MissingEnchantsText = MissingEnchantsText .. " Wrist " numenchantsmissing = numenchantsmissing + 1  end
             end
         end
         --EnchantHeading:ReleaseChildren()
@@ -384,13 +384,19 @@ local function GetTalents(_,event, one, two)
                             legendaryfound = true
                         end
                     end
+                else
+                    legendaryfound = true
+                    print("error scanning for legendary", CurrentClass, SpecName:gsub("%s+", ""), instanceType, AffixOnename)
                 end
             end
         end
 
         local numlegendarystosugest = 0
+        local WrongLegendaryText = ""
+        local LegendaryHeading
         if legendaryfound == false then
-            local LegendaryHeading = AceGUI:Create("InlineGroup")
+            --print(legendaryfound)
+            LegendaryHeading = AceGUI:Create("InlineGroup")
             LegendaryHeading:SetLayout("Flow")
             numlegendarystosugest = 0
             if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
@@ -403,7 +409,7 @@ local function GetTalents(_,event, one, two)
             MainFrame:AddChild(LegendaryHeading)
             LegendaryHeading:ReleaseChildren()
 
-            local WrongLegendaryText = ""
+            WrongLegendaryText = ""
             if type(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) == "table" then
                 for _,spellID in pairs(_G.DoReady[CurrentClass][SpecName:gsub("%s+", "")][instanceType][AffixOnename]["Legendarys"]) do
                     WrongLegendaryText = WrongLegendaryText .. " " .. GetSpellInfo(spellID) .. " "
@@ -427,38 +433,66 @@ local function GetTalents(_,event, one, two)
             --WrongLegendaryTextLable:SetText("We suggest using one of the following legendarys:" .. WrongLegendaryText)
             --LegendaryHeading:AddChild(WrongLegendaryTextLable)
             LegendaryHeading:DoLayout()
-
-
         end
 
         --MainFrame:SetHeight(0)
         local MainFrameHeightChange = 0
         local lengthneededforlegendaries =  tonumber(numlegendarystosugest*130)
-        local lengthneededfortalents = (numtalentschanged * 150)
-        if lengthneededforlegendaries and lengthneededfortalents then
-            if lengthneededfortalents > lengthneededforlegendaries then
-                MainFrame:SetWidth(lengthneededfortalents)
-            elseif lengthneededfortalents < lengthneededforlegendaries  then
-                MainFrame:SetWidth(lengthneededforlegendaries)
-            else
-                MainFrame:SetWidth(lengthneededforlegendaries)
-            end
+        local lengthneededfortalents = tonumber(numtalentschanged * 150)
+        local lengthneededforenchants = tonumber(string.len("MissingEnchantsText")*15)
+        --if lengthneededforlegendaries and lengthneededfortalents then
+        --    if lengthneededfortalents > lengthneededforlegendaries then
+        --        MainFrame:SetWidth(lengthneededfortalents)
+        --    elseif lengthneededfortalents < lengthneededforlegendaries  then
+        --        MainFrame:SetWidth(lengthneededforlegendaries)
+        --    else
+        --        MainFrame:SetWidth(lengthneededforlegendaries)
+        --    end
+        --end
+        local mainframespaceneeded
+
+        mainframespaceneeded = lengthneededforenchants
+        if mainframespaceneeded < lengthneededfortalents then
+            mainframespaceneeded = lengthneededfortalents
         end
+        if mainframespaceneeded < lengthneededforlegendaries then
+            mainframespaceneeded = lengthneededforlegendaries
+        end
+        MainFrame:SetWidth(mainframespaceneeded)
+
+
+        --if numtalentschanged and numtalentschanged > 0 then
+        --    MainFrameHeightChange = MainFrameHeightChange + tonumber(numtalentschanged * 150)
+        --end
+        --if MissingEnchantsText ~= "" then
+        --    MainFrameHeightChange = MainFrameHeightChange + 120
+        --end
+        --if numlegendarystosugest > 0 then
+        --    MainFrameHeightChange = MainFrameHeightChange + tonumber(numlegendarystosugest*130)
+        --end
+        --if MainFrameHeightChange and MainFrameHeightChange > 0 then
+        --    MainFrame:SetHeight(MainFrameHeightChange)
+        --end
+
+        MainFrame:SetHeight(0)
         if numtalentschanged and numtalentschanged > 0 then
-            MainFrameHeightChange = 150
-            --MainFrame:SetWidth(numtalentschanged * 150)
+            MainFrameHeightChange = MainFrameHeightChange + 160
         end
         if MissingEnchantsText ~= "" then
-            MainFrameHeightChange = MainFrameHeightChange + 100
+            MainFrameHeightChange = MainFrameHeightChange + 130
         end
-        if not legendaryfound then
-            MainFrameHeightChange = MainFrameHeightChange + 100
+        if numlegendarystosugest > 0 then
+            MainFrameHeightChange = MainFrameHeightChange + 160
         end
         if MainFrameHeightChange and MainFrameHeightChange > 0 then
             MainFrame:SetHeight(MainFrameHeightChange)
         end
 
-        if numtalentschanged == 0 and MissingEnchantsText == "" and legendaryfound == false then
+        if LegendaryHeading then
+            print(LegendaryHeading:GetPoint())
+        end
+
+        if numtalentschanged == 0 and MissingEnchantsText == "" and legendaryfound == true then
             --local NoChangesHeading = AceGUI:Create("InlineGroup")
             --NoChangesHeading:SetLayout("Flow")
             --NoChangesHeading:SetWidth(800)
@@ -472,6 +506,7 @@ local function GetTalents(_,event, one, two)
             NoChangesIcon:SetImageSize(25,25)
             NoChangesIcon:SetLabel("You are Perfection GLHF")
             MainFrame:AddChild(NoChangesIcon)
+            NoChangesIcon:SetPoint("CENTER")
             --NoChangesHeading:DoLayout()
             MainFrame:SetHeight(150)
             MainFrame:SetWidth(300)
@@ -479,8 +514,17 @@ local function GetTalents(_,event, one, two)
 
         MainFrame:DoLayout()
         --MainFrame:Show()
+
+        if event == "READY_ECHECK" then
+            if MainFrame:IsShown() then
+                --MainFrame:Hide()
+            else
+                MainFrame:Show()
+            end
+        end
+
         --if MainFrame:IsShown() then
-        --    MainFrame:Hide()
+        --    --MainFrame:Hide()
         --else
         --    MainFrame:Show()
         --end
@@ -517,6 +561,11 @@ OnClick = function(clickedframe, button)
                     elseif control_key then
                     else
                         GetTalents(_,"DoReady_MINIMAPBUTTON")
+                        if MainFrame:IsShown() then
+                            MainFrame:Hide()
+                        else
+                            MainFrame:Show()
+                        end
                     end
                 end
                 if button == "RightButton" then
@@ -543,5 +592,10 @@ function addon:OpenUI(one, two, three, four)
     end
     if one == "" then
         GetTalents(_,"DoReady_MINIMAPBUTTON")
+        if MainFrame:IsShown() then
+            MainFrame:Hide()
+        else
+            MainFrame:Show()
+        end
     end
 end
