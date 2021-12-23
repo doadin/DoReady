@@ -40,45 +40,45 @@ local function GetTalents(_,event, one, two)
         --    end
         --end
 
-        if instanceType == "none" or instanceType ~= "raid" or instanceType ~= "party" then
-            if event == "DoReady_MINIMAPBUTTON" or
-                event == "PLAYER_SPECIALIZATION_CHANGED" or
-                event == "PLAYER_TALENT_UPDATE" or
-                event == "PLAYER_PVP_TALENT_UPDATE" or
-                event == "ACTIVE_TALENT_GROUP_CHANGED" or
-                event == "PLAYER_EQUIPMENT_CHANGED" then
-                --local instanceTypeHeading = AceGUI:Create("InlineGroup")
-                --instanceTypeHeading:SetLayout("Flow")
-                --instanceTypeHeading:SetWidth(800)
-                --instanceTypeHeading:SetTitle("Select Content Type:")
-                --MainFrame:AddChild(instanceTypeHeading)
-                --instanceTypeHeading:ReleaseChildren()
-                instanceTypeSelector = AceGUI:Create("Dropdown")
-                instanceTypeSelector:AddItem(1,"Raid")
-                instanceTypeSelector:AddItem(2,"MythicPlus")
-                --if instanceTypeSelector:GetValue() == nil then
-                --    instanceTypeSelector:SetValue(2)
-                --end
-                if one then
-                    instanceTypeSelector:SetValue(tonumber(one))
-                else
-                    instanceTypeSelector:SetValue(2)
-                end
-                instanceTypeSelector:SetValue(one)
-                MainFrame:AddChild(instanceTypeSelector)
-                if instanceTypeSelector:GetValue() == 1 then
-                    instanceType = "Raid"
-                end
-                if instanceTypeSelector:GetValue() == 2 then
-                    instanceType = "MythicPlus"
-                end
-                instanceTypeSelector:SetCallback("OnValueChanged", function(_,_,choice) GetTalents(nil, "DoReady_MINIMAPBUTTON", choice)print(choice) end)
-            end
-        end
-        if instanceTypeSelector:GetValue() ~= 1 or instanceTypeSelector:GetValue() ~= 2 then
-            MainFrame:ReleaseChildren()
-            return
-        end
+        --if instanceType == "none" or instanceType ~= "raid" or instanceType ~= "party" then
+        --    if event == "DoReady_MINIMAPBUTTON" or
+        --        event == "PLAYER_SPECIALIZATION_CHANGED" or
+        --        event == "PLAYER_TALENT_UPDATE" or
+        --        event == "PLAYER_PVP_TALENT_UPDATE" or
+        --        event == "ACTIVE_TALENT_GROUP_CHANGED" or
+        --        event == "PLAYER_EQUIPMENT_CHANGED" then
+        --        --local instanceTypeHeading = AceGUI:Create("InlineGroup")
+        --        --instanceTypeHeading:SetLayout("Flow")
+        --        --instanceTypeHeading:SetWidth(800)
+        --        --instanceTypeHeading:SetTitle("Select Content Type:")
+        --        --MainFrame:AddChild(instanceTypeHeading)
+        --        --instanceTypeHeading:ReleaseChildren()
+        --        instanceTypeSelector = AceGUI:Create("Dropdown")
+        --        instanceTypeSelector:AddItem(1,"Raid")
+        --        instanceTypeSelector:AddItem(2,"MythicPlus")
+        --        --if instanceTypeSelector:GetValue() == nil then
+        --        --    instanceTypeSelector:SetValue(2)
+        --        --end
+        --        if one then
+        --            instanceTypeSelector:SetValue(tonumber(one))
+        --        else
+        --            instanceTypeSelector:SetValue(2)
+        --        end
+        --        instanceTypeSelector:SetValue(one)
+        --        MainFrame:AddChild(instanceTypeSelector)
+        --        if instanceTypeSelector:GetValue() == 1 then
+        --            instanceType = "Raid"
+        --        end
+        --        if instanceTypeSelector:GetValue() == 2 then
+        --            instanceType = "MythicPlus"
+        --        end
+        --        instanceTypeSelector:SetCallback("OnValueChanged", function(_,_,choice) GetTalents(nil, "DoReady_MINIMAPBUTTON", choice)print(choice) end)
+        --    end
+        --end
+        --if instanceTypeSelector:GetValue() ~= 1 or instanceTypeSelector:GetValue() ~= 2 then
+        --    MainFrame:ReleaseChildren()
+        --    return
+        --end
 
         if instanceType == "none" or instanceType == "party" then
             instanceType = "MythicPlus"
@@ -86,7 +86,7 @@ local function GetTalents(_,event, one, two)
             instanceType = "Raid"
         end
         --TODO: Fix Raid
-        --instanceType = "MythicPlus"
+        instanceType = "MythicPlus"
         local CurrentClass = ClassIndexTable[classIndex]
         local id, SpecName = GetSpecializationInfo(GetSpecialization())
         local CurrentAffixes = C_MythicPlus.GetCurrentAffixes()
