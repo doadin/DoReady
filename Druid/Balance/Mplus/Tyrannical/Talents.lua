@@ -1,9 +1,0 @@
-DoReady.Druid.Balance.MythicPlus.Tyrannical.Talents = {
-[1] = 205636,
-[2] = 102401,
-[3] = 197492,
-[4] = 319454,
-[5] = 114107,
-[6] = 202354,
-[7] = 202770,
-}
