@@ -1,4 +1,4 @@
-DoReady.Paladin.Protection.raid.Fortified.Legendarys = {
+DoReady.Paladin.Protection.Raid.Legendarys = {
 [1] = 337594,
 [2] = 355098,
 [3] = 337681,
@@ -10,7 +10,7 @@ DoReady.Paladin.Protection.raid.Fortified.Legendarys = {
 [9] = 355099,
 [10] = 355447,
 }
-DoReady.Paladin.Protection.raid.Fortified.Talents = {
+DoReady.Paladin.Protection.Raid.Talents = {
 [2] = 280373,
 [3] = 204023,
 [4] = 115750,
@@ -19,7 +19,7 @@ DoReady.Paladin.Protection.raid.Fortified.Talents = {
 [7] = 183778,
 [8] = 204074,
 }
-DoReady.Paladin.Retribution.raid.Fortified.Legendarys = {
+DoReady.Paladin.Retribution.Raid.Legendarys = {
 [1] = 355098,
 [2] = 337257,
 [3] = 337247,
@@ -31,7 +31,7 @@ DoReady.Paladin.Retribution.raid.Fortified.Legendarys = {
 [9] = 337831,
 [10] = 337297,
 }
-DoReady.Paladin.Retribution.raid.Fortified.Talents = {
+DoReady.Paladin.Retribution.Raid.Talents = {
 [2] = 343527,
 [3] = 231832,
 [4] = 234299,
@@ -40,7 +40,7 @@ DoReady.Paladin.Retribution.raid.Fortified.Talents = {
 [7] = 326734,
 [8] = 343721,
 }
-DoReady.Paladin.Holy.raid.Fortified.Legendarys = {
+DoReady.Paladin.Holy.Raid.Legendarys = {
 [1] = 340458,
 [2] = 337825,
 [3] = 337594,
@@ -50,7 +50,7 @@ DoReady.Paladin.Holy.raid.Fortified.Legendarys = {
 [7] = 337777,
 [8] = 355447,
 }
-DoReady.Paladin.Holy.raid.Fortified.Talents = {
+DoReady.Paladin.Holy.Raid.Talents = {
 [2] = 114158,
 [3] = 183778,
 [4] = 115750,

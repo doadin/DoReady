@@ -19,7 +19,7 @@ DoReady.Rogue.Outlaw.MythicPlus.Fortified.Talents = {
 [7] = 193539,
 [8] = 271877,
 }
-DoReady.Rogue.Assasination.MythicPlus.Fortified.Legendarys = {
+DoReady.Rogue.Assassination.MythicPlus.Fortified.Legendarys = {
 [1] = 340083,
 [2] = 354703,
 [3] = 340081,
@@ -31,7 +31,7 @@ DoReady.Rogue.Assasination.MythicPlus.Fortified.Legendarys = {
 [9] = 354837,
 [10] = 340087,
 }
-DoReady.Rogue.Assasination.MythicPlus.Fortified.Talents = {
+DoReady.Rogue.Assassination.MythicPlus.Fortified.Talents = {
 [2] = 193640,
 [3] = 108208,
 [4] = 14983,

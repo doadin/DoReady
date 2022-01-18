@@ -1,4 +1,4 @@
-DoReady.Warlock.Affliction.raid.Fortified.Legendarys = {
+DoReady.Warlock.Affliction.Raid.Legendarys = {
 [1] = 356362,
 [2] = 337122,
 [3] = 337057,
@@ -9,7 +9,7 @@ DoReady.Warlock.Affliction.raid.Fortified.Legendarys = {
 [8] = 337166,
 [9] = 356259,
 }
-DoReady.Warlock.Affliction.raid.Fortified.Talents = {
+DoReady.Warlock.Affliction.Raid.Talents = {
 [2] = 198590,
 [3] = 63106,
 [4] = 108416,
@@ -18,7 +18,7 @@ DoReady.Warlock.Affliction.raid.Fortified.Talents = {
 [7] = 48181,
 [8] = 113860,
 }
-DoReady.Warlock.Destruction.raid.Fortified.Legendarys = {
+DoReady.Warlock.Destruction.Raid.Legendarys = {
 [1] = 337166,
 [2] = 337020,
 [3] = 356344,
@@ -28,7 +28,7 @@ DoReady.Warlock.Destruction.raid.Fortified.Legendarys = {
 [7] = 356254,
 [8] = 356362,
 }
-DoReady.Warlock.Destruction.raid.Fortified.Talents = {
+DoReady.Warlock.Destruction.Raid.Talents = {
 [2] = 267115,
 [3] = 205148,
 [4] = 108416,
@@ -37,7 +37,7 @@ DoReady.Warlock.Destruction.raid.Fortified.Talents = {
 [7] = 205184,
 [8] = 113858,
 }
-DoReady.Warlock.Demonology.raid.Fortified.Legendarys = {
+DoReady.Warlock.Demonology.Raid.Legendarys = {
 [1] = 337020,
 [2] = 356362,
 [3] = 337141,
@@ -45,7 +45,7 @@ DoReady.Warlock.Demonology.raid.Fortified.Legendarys = {
 [5] = 337146,
 [6] = 356344,
 }
-DoReady.Warlock.Demonology.raid.Fortified.Talents = {
+DoReady.Warlock.Demonology.Raid.Talents = {
 [2] = 267171,
 [3] = 205145,
 [4] = 108416,

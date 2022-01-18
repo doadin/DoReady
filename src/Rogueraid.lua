@@ -1,4 +1,4 @@
-DoReady.Rogue.Outlaw.raid.Fortified.Legendarys = {
+DoReady.Rogue.Outlaw.Raid.Legendarys = {
 [1] = 340087,
 [2] = 354837,
 [3] = 340092,
@@ -8,7 +8,7 @@ DoReady.Rogue.Outlaw.raid.Fortified.Legendarys = {
 [7] = 340081,
 [8] = 340088,
 }
-DoReady.Rogue.Outlaw.raid.Fortified.Talents = {
+DoReady.Rogue.Outlaw.Raid.Talents = {
 [2] = 196937,
 [3] = 196924,
 [4] = 137619,
@@ -17,14 +17,14 @@ DoReady.Rogue.Outlaw.raid.Fortified.Talents = {
 [7] = 193539,
 [8] = 271877,
 }
-DoReady.Rogue.Assasination.raid.Fortified.Legendarys = {
+DoReady.Rogue.Assassination.Raid.Legendarys = {
 [1] = 340081,
 [2] = 354703,
 [3] = 340082,
 [4] = 340083,
 [5] = 340087,
 }
-DoReady.Rogue.Assasination.raid.Fortified.Talents = {
+DoReady.Rogue.Assassination.Raid.Talents = {
 [2] = 193640,
 [3] = 255989,
 [4] = 14983,
@@ -33,7 +33,7 @@ DoReady.Rogue.Assasination.raid.Fortified.Talents = {
 [7] = 193539,
 [8] = 255544,
 }
-DoReady.Rogue.Sublety.raid.Fortified.Legendarys = {
+DoReady.Rogue.Sublety.Raid.Legendarys = {
 [1] = 354703,
 [2] = 354837,
 [3] = 340092,
@@ -41,7 +41,7 @@ DoReady.Rogue.Sublety.raid.Fortified.Legendarys = {
 [5] = 340080,
 [6] = 340076,
 }
-DoReady.Rogue.Sublety.raid.Fortified.Talents = {
+DoReady.Rogue.Sublety.Raid.Talents = {
 [2] = 193537,
 [3] = 108209,
 [4] = 193531,

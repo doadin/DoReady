@@ -19,7 +19,7 @@ DoReady.Hunter.BeastMastery.MythicPlus.Fortified.Talents = {
 [7] = 199530,
 [8] = 191384,
 }
-DoReady.Hunter.MarksMan.MythicPlus.Fortified.Legendarys = {
+DoReady.Hunter.Marksmanship.MythicPlus.Fortified.Legendarys = {
 [1] = 336867,
 [2] = 356264,
 [3] = 356375,
@@ -28,7 +28,7 @@ DoReady.Hunter.MarksMan.MythicPlus.Fortified.Legendarys = {
 [6] = 336849,
 [7] = 336878,
 }
-DoReady.Hunter.MarksMan.MythicPlus.Fortified.Talents = {
+DoReady.Hunter.Marksmanship.MythicPlus.Fortified.Talents = {
 [2] = 260309,
 [3] = 212431,
 [4] = 199483,

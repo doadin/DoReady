@@ -1,4 +1,4 @@
-DoReady.Warrior.Protection.raid.Fortified.Legendarys = {
+DoReady.Warrior.Protection.Raid.Legendarys = {
 [1] = 335718,
 [2] = 335239,
 [3] = 357996,
@@ -10,7 +10,7 @@ DoReady.Warrior.Protection.raid.Fortified.Legendarys = {
 [9] = 335758,
 [10] = 335229,
 }
-DoReady.Warrior.Protection.raid.Fortified.Talents = {
+DoReady.Warrior.Protection.Raid.Talents = {
 [2] = 236279,
 [3] = 103827,
 [4] = 202743,
@@ -19,14 +19,14 @@ DoReady.Warrior.Protection.raid.Fortified.Talents = {
 [7] = 202603,
 [8] = 152278,
 }
-DoReady.Warrior.Arms.raid.Fortified.Legendarys = {
+DoReady.Warrior.Arms.Raid.Legendarys = {
 [1] = 335458,
 [2] = 357996,
 [3] = 335266,
 [4] = 335451,
 [5] = 353577,
 }
-DoReady.Warrior.Arms.raid.Fortified.Talents = {
+DoReady.Warrior.Arms.Raid.Talents = {
 [2] = 29725,
 [3] = 103827,
 [4] = 772,
@@ -35,7 +35,7 @@ DoReady.Warrior.Arms.raid.Fortified.Talents = {
 [7] = 107574,
 [8] = 262150,
 }
-DoReady.Warrior.Fury.raid.Fortified.Legendarys = {
+DoReady.Warrior.Fury.Raid.Legendarys = {
 [1] = 357996,
 [2] = 335266,
 [3] = 354131,
@@ -46,7 +46,7 @@ DoReady.Warrior.Fury.raid.Fortified.Legendarys = {
 [8] = 354161,
 [9] = 335555,
 }
-DoReady.Warrior.Fury.raid.Fortified.Talents = {
+DoReady.Warrior.Fury.Raid.Talents = {
 [2] = 280721,
 [3] = 103827,
 [4] = 335077,

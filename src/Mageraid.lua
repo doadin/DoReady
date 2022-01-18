@@ -1,4 +1,4 @@
-DoReady.Mage.Frost.raid.Fortified.Legendarys = {
+DoReady.Mage.Frost.Raid.Legendarys = {
 [1] = 327364,
 [2] = 327508,
 [3] = 327492,
@@ -6,7 +6,7 @@ DoReady.Mage.Frost.raid.Fortified.Legendarys = {
 [5] = 354294,
 [6] = 333313,
 }
-DoReady.Mage.Frost.raid.Fortified.Talents = {
+DoReady.Mage.Frost.Raid.Talents = {
 [2] = 205024,
 [3] = 212653,
 [4] = 116011,
@@ -15,11 +15,11 @@ DoReady.Mage.Frost.raid.Fortified.Talents = {
 [7] = 56377,
 [8] = 155149,
 }
-DoReady.Mage.Fire.raid.Fortified.Legendarys = {
+DoReady.Mage.Fire.Raid.Legendarys = {
 [1] = 333313,
 [2] = 327365,
 }
-DoReady.Mage.Fire.raid.Fortified.Talents = {
+DoReady.Mage.Fire.Raid.Talents = {
 [2] = 269644,
 [3] = 212653,
 [4] = 116011,
@@ -28,14 +28,14 @@ DoReady.Mage.Fire.raid.Fortified.Talents = {
 [7] = 205023,
 [8] = 269650,
 }
-DoReady.Mage.Arcane.raid.Fortified.Legendarys = {
+DoReady.Mage.Arcane.Raid.Legendarys = {
 [1] = 332769,
 [2] = 332928,
 [3] = 327351,
 [4] = 327364,
 [5] = 332892,
 }
-DoReady.Mage.Arcane.raid.Fortified.Talents = {
+DoReady.Mage.Arcane.Raid.Talents = {
 [2] = 236628,
 [3] = 212653,
 [4] = 116011,

@@ -1,4 +1,4 @@
-DoReady.DeathKnight.Blood.raid.Fortified.Legendarys = {
+DoReady.DeathKnight.Blood.Raid.Legendarys = {
 [1] = 334974,
 [2] = 334724,
 [3] = 334525,
@@ -10,7 +10,7 @@ DoReady.DeathKnight.Blood.raid.Fortified.Legendarys = {
 [9] = 334888,
 [10] = 334692,
 }
-DoReady.DeathKnight.Blood.raid.Fortified.Talents = {
+DoReady.DeathKnight.Blood.Raid.Talents = {
 [2] = 206931,
 [3] = 273946,
 [4] = 221699,
@@ -19,7 +19,7 @@ DoReady.DeathKnight.Blood.raid.Fortified.Talents = {
 [7] = 195679,
 [8] = 114556,
 }
-DoReady.DeathKnight.Frost.raid.Fortified.Legendarys = {
+DoReady.DeathKnight.Frost.Raid.Legendarys = {
 [1] = 341724,
 [2] = 334583,
 [3] = 334724,
@@ -31,7 +31,7 @@ DoReady.DeathKnight.Frost.raid.Fortified.Legendarys = {
 [9] = 334888,
 [10] = 353447,
 }
-DoReady.DeathKnight.Frost.raid.Fortified.Talents = {
+DoReady.DeathKnight.Frost.Raid.Talents = {
 [2] = 281208,
 [3] = 207104,
 [4] = 207167,
@@ -40,14 +40,14 @@ DoReady.DeathKnight.Frost.raid.Fortified.Talents = {
 [7] = 194912,
 [8] = 152279,
 }
-DoReady.DeathKnight.Unholy.raid.Fortified.Legendarys = {
+DoReady.DeathKnight.Unholy.Raid.Legendarys = {
 [1] = 334949,
 [2] = 334888,
 [3] = 334724,
 [4] = 334836,
 [5] = 334974,
 }
-DoReady.DeathKnight.Unholy.raid.Fortified.Talents = {
+DoReady.DeathKnight.Unholy.Raid.Talents = {
 [2] = 207311,
 [3] = 115989,
 [4] = 108194,

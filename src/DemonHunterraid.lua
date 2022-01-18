@@ -1,4 +1,4 @@
-DoReady.DemonHunter.Vengeance.raid.Fortified.Legendarys = {
+DoReady.DemonHunter.Vengeance.Raid.Legendarys = {
 [1] = 337547,
 [2] = 337544,
 [3] = 355893,
@@ -10,7 +10,7 @@ DoReady.DemonHunter.Vengeance.raid.Fortified.Legendarys = {
 [9] = 355890,
 [10] = 337545,
 }
-DoReady.DemonHunter.Vengeance.raid.Fortified.Talents = {
+DoReady.DemonHunter.Vengeance.Raid.Talents = {
 [2] = 207548,
 [3] = 227174,
 [4] = 247454,
@@ -19,7 +19,7 @@ DoReady.DemonHunter.Vengeance.raid.Fortified.Talents = {
 [7] = 321453,
 [8] = 209258,
 }
-DoReady.DemonHunter.Havoc.raid.Fortified.Legendarys = {
+DoReady.DemonHunter.Havoc.Raid.Legendarys = {
 [1] = 346279,
 [2] = 355886,
 [3] = 337504,
@@ -28,7 +28,7 @@ DoReady.DemonHunter.Havoc.raid.Fortified.Legendarys = {
 [6] = 355890,
 [7] = 355893,
 }
-DoReady.DemonHunter.Havoc.raid.Fortified.Talents = {
+DoReady.DemonHunter.Havoc.Raid.Talents = {
 [2] = 232893,
 [3] = 203555,
 [4] = 342817,

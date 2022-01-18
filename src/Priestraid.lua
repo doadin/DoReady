@@ -1,4 +1,4 @@
-DoReady.Priest.Disclipline.raid.Fortified.Legendarys = {
+DoReady.Priest.Disclipline.Raid.Legendarys = {
 [1] = 336067,
 [2] = 356395,
 [3] = 356390,
@@ -8,7 +8,7 @@ DoReady.Priest.Disclipline.raid.Fortified.Legendarys = {
 [7] = 356392,
 [8] = 336266,
 }
-DoReady.Priest.Disclipline.raid.Fortified.Talents = {
+DoReady.Priest.Disclipline.Raid.Talents = {
 [2] = 214621,
 [3] = 121536,
 [4] = 129250,
@@ -17,7 +17,7 @@ DoReady.Priest.Disclipline.raid.Fortified.Talents = {
 [7] = 204197,
 [8] = 246287,
 }
-DoReady.Priest.Holy.raid.Fortified.Legendarys = {
+DoReady.Priest.Holy.Raid.Legendarys = {
 [1] = 336266,
 [2] = 356390,
 [3] = 336314,
@@ -29,7 +29,7 @@ DoReady.Priest.Holy.raid.Fortified.Legendarys = {
 [9] = 336067,
 [10] = 336400,
 }
-DoReady.Priest.Holy.raid.Fortified.Talents = {
+DoReady.Priest.Holy.Raid.Talents = {
 [2] = 200128,
 [3] = 121536,
 [4] = 238136,
@@ -38,14 +38,14 @@ DoReady.Priest.Holy.raid.Fortified.Talents = {
 [7] = 193157,
 [8] = 265202,
 }
-DoReady.Priest.Shadow.raid.Fortified.Legendarys = {
+DoReady.Priest.Shadow.Raid.Legendarys = {
 [1] = 356390,
 [2] = 336143,
 [3] = 342415,
 [4] = 356395,
 [5] = 356391,
 }
-DoReady.Priest.Shadow.raid.Fortified.Talents = {
+DoReady.Priest.Shadow.Raid.Talents = {
 [2] = 193195,
 [3] = 64129,
 [4] = 109142,

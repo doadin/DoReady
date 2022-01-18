@@ -1,4 +1,4 @@
-DoReady.Monk.BrewMaster.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Monk.Brewmaster.MythicPlus.Tyrannical.Legendarys = {
 [1] = 337288,
 [2] = 337290,
 [3] = 356818,
@@ -8,7 +8,7 @@ DoReady.Monk.BrewMaster.MythicPlus.Tyrannical.Legendarys = {
 [7] = 356705,
 [8] = 356592,
 }
-DoReady.Monk.BrewMaster.MythicPlus.Tyrannical.Talents = {
+DoReady.Monk.Brewmaster.MythicPlus.Tyrannical.Talents = {
 [2] = 115098,
 [3] = 116841,
 [4] = 325093,
@@ -17,12 +17,12 @@ DoReady.Monk.BrewMaster.MythicPlus.Tyrannical.Talents = {
 [7] = 196730,
 [8] = 196737,
 }
-DoReady.Monk.WindWalker.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Monk.Windwalker.MythicPlus.Tyrannical.Legendarys = {
 [1] = 337298,
 [2] = 337334,
 [3] = 356592,
 }
-DoReady.Monk.WindWalker.MythicPlus.Tyrannical.Talents = {
+DoReady.Monk.Windwalker.MythicPlus.Tyrannical.Talents = {
 [2] = 123986,
 [3] = 116841,
 [4] = 115396,
@@ -31,7 +31,7 @@ DoReady.Monk.WindWalker.MythicPlus.Tyrannical.Talents = {
 [7] = 325201,
 [8] = 152175,
 }
-DoReady.Monk.MistWeaver.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Monk.Mistweaver.MythicPlus.Tyrannical.Legendarys = {
 [1] = 356818,
 [2] = 337172,
 [3] = 337473,
@@ -43,7 +43,7 @@ DoReady.Monk.MistWeaver.MythicPlus.Tyrannical.Legendarys = {
 [9] = 337288,
 [10] = 337225,
 }
-DoReady.Monk.MistWeaver.MythicPlus.Tyrannical.Talents = {
+DoReady.Monk.Mistweaver.MythicPlus.Tyrannical.Talents = {
 [2] = 197900,
 [3] = 116841,
 [4] = 197908,

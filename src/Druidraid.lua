@@ -1,4 +1,4 @@
-DoReady.Druid.Guardian.raid.Fortified.Legendarys = {
+DoReady.Druid.Guardian.Raid.Legendarys = {
 [1] = 338658,
 [2] = 354115,
 [3] = 339056,
@@ -10,7 +10,7 @@ DoReady.Druid.Guardian.raid.Fortified.Legendarys = {
 [9] = 339062,
 [10] = 354123,
 }
-DoReady.Druid.Guardian.raid.Fortified.Talents = {
+DoReady.Druid.Guardian.Raid.Talents = {
 [2] = 203953,
 [3] = 108238,
 [4] = 202155,
@@ -19,7 +19,7 @@ DoReady.Druid.Guardian.raid.Fortified.Talents = {
 [7] = 203974,
 [8] = 204053,
 }
-DoReady.Druid.Feral.raid.Fortified.Legendarys = {
+DoReady.Druid.Feral.Raid.Legendarys = {
 [1] = 354118,
 [2] = 354115,
 [3] = 339056,
@@ -30,7 +30,7 @@ DoReady.Druid.Feral.raid.Fortified.Legendarys = {
 [8] = 339063,
 [9] = 354109,
 }
-DoReady.Druid.Feral.raid.Fortified.Talents = {
+DoReady.Druid.Feral.Raid.Talents = {
 [2] = 202031,
 [3] = 102401,
 [4] = 197488,
@@ -39,13 +39,13 @@ DoReady.Druid.Feral.raid.Fortified.Talents = {
 [7] = 202028,
 [8] = 319439,
 }
-DoReady.Druid.Balance.raid.Fortified.Legendarys = {
+DoReady.Druid.Balance.Raid.Legendarys = {
 [1] = 354109,
 [2] = 338668,
 [3] = 354115,
 [4] = 339942,
 }
-DoReady.Druid.Balance.raid.Fortified.Talents = {
+DoReady.Druid.Balance.Raid.Talents = {
 [2] = 202430,
 [3] = 102401,
 [4] = 197492,
@@ -54,7 +54,7 @@ DoReady.Druid.Balance.raid.Fortified.Talents = {
 [7] = 202354,
 [8] = 202770,
 }
-DoReady.Druid.Restoration.raid.Fortified.Legendarys = {
+DoReady.Druid.Restoration.Raid.Legendarys = {
 [1] = 354118,
 [2] = 354115,
 [3] = 354109,
@@ -66,7 +66,7 @@ DoReady.Druid.Restoration.raid.Fortified.Legendarys = {
 [9] = 338658,
 [10] = 339062,
 }
-DoReady.Druid.Restoration.raid.Fortified.Talents = {
+DoReady.Druid.Restoration.Raid.Talents = {
 [2] = 207383,
 [3] = 102401,
 [4] = 197632,

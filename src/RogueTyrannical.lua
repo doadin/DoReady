@@ -19,7 +19,7 @@ DoReady.Rogue.Outlaw.MythicPlus.Tyrannical.Talents = {
 [7] = 193539,
 [8] = 271877,
 }
-DoReady.Rogue.Assasination.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Rogue.Assassination.MythicPlus.Tyrannical.Legendarys = {
 [1] = 340083,
 [2] = 354703,
 [3] = 340081,
@@ -31,7 +31,7 @@ DoReady.Rogue.Assasination.MythicPlus.Tyrannical.Legendarys = {
 [9] = 354837,
 [10] = 340087,
 }
-DoReady.Rogue.Assasination.MythicPlus.Tyrannical.Talents = {
+DoReady.Rogue.Assassination.MythicPlus.Tyrannical.Talents = {
 [2] = 193640,
 [3] = 108208,
 [4] = 14983,
