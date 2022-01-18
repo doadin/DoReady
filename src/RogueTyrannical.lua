@@ -40,7 +40,7 @@ DoReady.Rogue.Assassination.MythicPlus.Tyrannical.Talents = {
 [7] = 193539,
 [8] = 121411,
 }
-DoReady.Rogue.Sublety.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Rogue.Subtlety.MythicPlus.Tyrannical.Legendarys = {
 [1] = 354703,
 [2] = 340089,
 [3] = 354837,
@@ -48,7 +48,7 @@ DoReady.Rogue.Sublety.MythicPlus.Tyrannical.Legendarys = {
 [5] = 340092,
 [6] = 340081,
 }
-DoReady.Rogue.Sublety.MythicPlus.Tyrannical.Talents = {
+DoReady.Rogue.Subtlety.MythicPlus.Tyrannical.Talents = {
 [2] = 193537,
 [3] = 108209,
 [4] = 193531,

@@ -33,7 +33,7 @@ DoReady.Rogue.Assassination.Raid.Talents = {
 [7] = 193539,
 [8] = 255544,
 }
-DoReady.Rogue.Sublety.Raid.Legendarys = {
+DoReady.Rogue.Subtlety.Raid.Legendarys = {
 [1] = 354703,
 [2] = 354837,
 [3] = 340092,
@@ -41,7 +41,7 @@ DoReady.Rogue.Sublety.Raid.Legendarys = {
 [5] = 340080,
 [6] = 340076,
 }
-DoReady.Rogue.Sublety.Raid.Talents = {
+DoReady.Rogue.Subtlety.Raid.Talents = {
 [2] = 193537,
 [3] = 108209,
 [4] = 193531,

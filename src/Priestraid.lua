@@ -1,4 +1,4 @@
-DoReady.Priest.Disclipline.Raid.Legendarys = {
+DoReady.Priest.Discipline.Raid.Legendarys = {
 [1] = 336067,
 [2] = 356395,
 [3] = 356390,
@@ -8,7 +8,7 @@ DoReady.Priest.Disclipline.Raid.Legendarys = {
 [7] = 356392,
 [8] = 336266,
 }
-DoReady.Priest.Disclipline.Raid.Talents = {
+DoReady.Priest.Discipline.Raid.Talents = {
 [2] = 214621,
 [3] = 121536,
 [4] = 129250,

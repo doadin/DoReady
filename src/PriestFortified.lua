@@ -1,4 +1,4 @@
-DoReady.Priest.Disclipline.MythicPlus.Fortified.Legendarys = {
+DoReady.Priest.Discipline.MythicPlus.Fortified.Legendarys = {
 [1] = 356395,
 [2] = 336897,
 [3] = 336067,
@@ -10,7 +10,7 @@ DoReady.Priest.Disclipline.MythicPlus.Fortified.Legendarys = {
 [9] = 338477,
 [10] = 336143,
 }
-DoReady.Priest.Disclipline.MythicPlus.Fortified.Talents = {
+DoReady.Priest.Discipline.MythicPlus.Fortified.Talents = {
 [2] = 265259,
 [3] = 121536,
 [4] = 129250,

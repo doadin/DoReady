@@ -1,4 +1,4 @@
-DoReady.Priest.Disclipline.MythicPlus.Tyrannical.Legendarys = {
+DoReady.Priest.Discipline.MythicPlus.Tyrannical.Legendarys = {
 [1] = 356395,
 [2] = 336897,
 [3] = 336067,
@@ -10,7 +10,7 @@ DoReady.Priest.Disclipline.MythicPlus.Tyrannical.Legendarys = {
 [9] = 338477,
 [10] = 336143,
 }
-DoReady.Priest.Disclipline.MythicPlus.Tyrannical.Talents = {
+DoReady.Priest.Discipline.MythicPlus.Tyrannical.Talents = {
 [2] = 265259,
 [3] = 121536,
 [4] = 129250,
