@@ -5,16 +5,17 @@ DoReady.Paladin.Protection.MythicPlus.Tyrannical.Legendarys = {
 [4] = 337594,
 [5] = 337850,
 [6] = 337257,
-[7] = 337681,
+[7] = 340458,
+[8] = 337681,
 }
 DoReady.Paladin.Protection.MythicPlus.Tyrannical.Talents = {
-[2] = 152261,
-[3] = 203776,
-[4] = 115750,
-[5] = 114154,
-[6] = 223817,
-[7] = 315924,
-[8] = 204074,
+[1] = 152261,
+[2] = 203776,
+[3] = 115750,
+[4] = 114154,
+[5] = 223817,
+[6] = 315924,
+[7] = 204074,
 }
 DoReady.Paladin.Retribution.MythicPlus.Tyrannical.Legendarys = {
 [1] = 355098,
@@ -29,13 +30,13 @@ DoReady.Paladin.Retribution.MythicPlus.Tyrannical.Legendarys = {
 [10] = 337297,
 }
 DoReady.Paladin.Retribution.MythicPlus.Tyrannical.Talents = {
-[2] = 343527,
-[3] = 326732,
-[4] = 234299,
-[5] = 114154,
-[6] = 152262,
-[7] = 326734,
-[8] = 343721,
+[1] = 343527,
+[2] = 326732,
+[3] = 234299,
+[4] = 114154,
+[5] = 152262,
+[6] = 326734,
+[7] = 343721,
 }
 DoReady.Paladin.Holy.MythicPlus.Tyrannical.Legendarys = {
 [1] = 337594,
@@ -48,11 +49,11 @@ DoReady.Paladin.Holy.MythicPlus.Tyrannical.Legendarys = {
 [8] = 337847,
 }
 DoReady.Paladin.Holy.MythicPlus.Tyrannical.Talents = {
-[2] = 114158,
-[3] = 183778,
-[4] = 115750,
-[5] = 114154,
-[6] = 105809,
-[7] = 248033,
-[8] = 156910,
+[1] = 114158,
+[2] = 183778,
+[3] = 115750,
+[4] = 114154,
+[5] = 105809,
+[6] = 248033,
+[7] = 156910,
 }

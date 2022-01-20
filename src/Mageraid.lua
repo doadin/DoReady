@@ -33,7 +33,8 @@ DoReady.Mage.Arcane.Raid.Legendarys = {
 [2] = 332928,
 [3] = 327351,
 [4] = 327364,
-[5] = 332892,
+[5] = 354294,
+[6] = 332892,
 }
 DoReady.Mage.Arcane.Raid.Talents = {
 [2] = 236628,

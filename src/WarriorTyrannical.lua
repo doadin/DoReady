@@ -11,13 +11,13 @@ DoReady.Warrior.Protection.MythicPlus.Tyrannical.Legendarys = {
 [10] = 354161,
 }
 DoReady.Warrior.Protection.MythicPlus.Tyrannical.Talents = {
-[2] = 236279,
-[3] = 103827,
-[4] = 202560,
-[5] = 203201,
-[6] = 202095,
-[7] = 228920,
-[8] = 203177,
+[1] = 236279,
+[2] = 103827,
+[3] = 202560,
+[4] = 203201,
+[5] = 202095,
+[6] = 228920,
+[7] = 203177,
 }
 DoReady.Warrior.Arms.MythicPlus.Tyrannical.Legendarys = {
 [1] = 357996,
@@ -27,29 +27,29 @@ DoReady.Warrior.Arms.MythicPlus.Tyrannical.Legendarys = {
 [5] = 335282,
 [6] = 353577,
 [7] = 335451,
-[8] = 335718,
-[9] = 335758,
+[8] = 335758,
+[9] = 335718,
 [10] = 335274,
 }
 DoReady.Warrior.Arms.MythicPlus.Tyrannical.Talents = {
-[2] = 29725,
-[3] = 103827,
-[4] = 281001,
-[5] = 29838,
-[6] = 262161,
-[7] = 107574,
-[8] = 262150,
+[1] = 29725,
+[2] = 103827,
+[3] = 281001,
+[4] = 29838,
+[5] = 262161,
+[6] = 107574,
+[7] = 262150,
 }
 DoReady.Warrior.Fury.MythicPlus.Tyrannical.Legendarys = {
 [1] = 357996,
 [2] = 335266,
 }
 DoReady.Warrior.Fury.MythicPlus.Tyrannical.Talents = {
-[2] = 215568,
-[3] = 107570,
-[4] = 206315,
-[5] = 208154,
-[6] = 335070,
-[7] = 46924,
-[8] = 152278,
+[1] = 215568,
+[2] = 107570,
+[3] = 206315,
+[4] = 208154,
+[5] = 335070,
+[6] = 46924,
+[7] = 152278,
 }

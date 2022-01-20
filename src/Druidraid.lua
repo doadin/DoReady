@@ -6,8 +6,8 @@ DoReady.Druid.Guardian.Raid.Legendarys = {
 [5] = 354118,
 [6] = 339060,
 [7] = 354109,
-[8] = 340059,
-[9] = 339062,
+[8] = 339062,
+[9] = 340059,
 [10] = 354123,
 }
 DoReady.Druid.Guardian.Raid.Talents = {
@@ -43,7 +43,8 @@ DoReady.Druid.Balance.Raid.Legendarys = {
 [1] = 354109,
 [2] = 338668,
 [3] = 354115,
-[4] = 339942,
+[4] = 354118,
+[5] = 339942,
 }
 DoReady.Druid.Balance.Raid.Talents = {
 [2] = 202430,
@@ -63,8 +64,8 @@ DoReady.Druid.Restoration.Raid.Legendarys = {
 [6] = 338829,
 [7] = 339064,
 [8] = 338657,
-[9] = 338658,
-[10] = 339062,
+[9] = 339062,
+[10] = 338658,
 }
 DoReady.Druid.Restoration.Raid.Talents = {
 [2] = 207383,

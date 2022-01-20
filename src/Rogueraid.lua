@@ -21,8 +21,10 @@ DoReady.Rogue.Assassination.Raid.Legendarys = {
 [1] = 340081,
 [2] = 354703,
 [3] = 340082,
-[4] = 340083,
-[5] = 340087,
+[4] = 354473,
+[5] = 340083,
+[6] = 340087,
+[7] = 340089,
 }
 DoReady.Rogue.Assassination.Raid.Talents = {
 [2] = 193640,
