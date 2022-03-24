@@ -602,9 +602,10 @@ local function GetTalents(_,event, one, two)
 
         -- Legendary Code Starts Here
         local numlegendarystosugest
+        local legendaryfound
         if instanceType == "MythicPlus" then
             local slots = {"Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "Tabard", "Wrist", "Waist", "Legs", "Feet", "Hands", "Finger0", "Finger1", "Trinket0", "Trinket1", "MainHand", "SecondaryHand"}
-            local legendaryfound = false
+            legendaryfound = false
             for slotNumber,slotName in pairs(slots) do
                 --print(slotNumber,slotName)
                 local slotID = GetInventorySlotInfo(slotName .. "slot")
@@ -672,7 +673,7 @@ local function GetTalents(_,event, one, two)
 
         if instanceType == "Raid" then
             local slots = {"Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "Tabard", "Wrist", "Waist", "Legs", "Feet", "Hands", "Finger0", "Finger1", "Trinket0", "Trinket1", "MainHand", "SecondaryHand"}
-            local legendaryfound = false
+            legendaryfound = false
             for slotNumber,slotName in pairs(slots) do
                 --print(slotNumber,slotName)
                 local slotID = GetInventorySlotInfo(slotName .. "slot")
@@ -800,6 +801,7 @@ local function GetTalents(_,event, one, two)
             --MainFrame:AddChild(NoChangesHeading)
             --NoChangesHeading:ReleaseChildren()
 
+            MainFrame:ReleaseChildren()
             local NoChangesIcon = AceGUI:Create("Icon")
             --NoChangesIcon:SetText("You are Perfection GLHF")
             NoChangesIcon:SetImage("Interface\\RaidFrame\\ReadyCheck-Ready")
