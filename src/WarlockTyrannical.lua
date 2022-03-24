@@ -1,14 +1,13 @@
 DoReady.Warlock.Affliction.MythicPlus.Tyrannical.Legendarys = {
 [1] = 356362,
-[2] = 356259,
+[2] = 337020,
 [3] = 337057,
-[4] = 337122,
-[5] = 337020,
-[6] = 337166,
-[7] = 337106,
-[8] = 337111,
-[9] = 356344,
-[10] = 337128,
+[4] = 337128,
+[5] = 356259,
+[6] = 337122,
+[7] = 337166,
+[8] = 337106,
+[9] = 337111,
 }
 DoReady.Warlock.Affliction.MythicPlus.Tyrannical.Talents = {
 [1] = 198590,
@@ -21,15 +20,13 @@ DoReady.Warlock.Affliction.MythicPlus.Tyrannical.Talents = {
 }
 DoReady.Warlock.Destruction.MythicPlus.Tyrannical.Legendarys = {
 [1] = 337020,
-[2] = 337166,
-[3] = 356259,
-[4] = 356362,
+[2] = 356259,
+[3] = 337166,
+[4] = 337169,
 [5] = 356344,
-[6] = 337057,
-[7] = 337169,
-[8] = 337163,
-[9] = 337272,
-[10] = 337141,
+[6] = 356362,
+[7] = 337141,
+[8] = 337135,
 }
 DoReady.Warlock.Destruction.MythicPlus.Tyrannical.Talents = {
 [1] = 267115,
@@ -42,14 +39,12 @@ DoReady.Warlock.Destruction.MythicPlus.Tyrannical.Talents = {
 }
 DoReady.Warlock.Demonology.MythicPlus.Tyrannical.Legendarys = {
 [1] = 337020,
-[2] = 337141,
-[3] = 337135,
-[4] = 337146,
-[5] = 337057,
-[6] = 356362,
-[7] = 337166,
-[8] = 356259,
-[9] = 356344,
+[2] = 337135,
+[3] = 337141,
+[4] = 356362,
+[5] = 337146,
+[6] = 337057,
+[7] = 337038,
 }
 DoReady.Warlock.Demonology.MythicPlus.Tyrannical.Talents = {
 [1] = 264078,

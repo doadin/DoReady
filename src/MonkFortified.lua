@@ -1,12 +1,11 @@
 DoReady.Monk.Brewmaster.MythicPlus.Fortified.Legendarys = {
 [1] = 337288,
 [2] = 337290,
-[3] = 338138,
-[4] = 356818,
+[3] = 364857,
+[4] = 338138,
 [5] = 337298,
-[6] = 356592,
-[7] = 356705,
-[8] = 337296,
+[6] = 356818,
+[7] = 337296,
 }
 DoReady.Monk.Brewmaster.MythicPlus.Fortified.Talents = {
 [1] = 115098,
@@ -19,12 +18,13 @@ DoReady.Monk.Brewmaster.MythicPlus.Fortified.Talents = {
 }
 DoReady.Monk.Windwalker.MythicPlus.Fortified.Legendarys = {
 [1] = 337298,
-[2] = 356592,
-[3] = 337334,
-[4] = 356705,
-[5] = 337483,
-[6] = 337296,
-[7] = 356818,
+[2] = 364857,
+[3] = 356592,
+[4] = 337334,
+[5] = 356705,
+[6] = 337483,
+[7] = 337296,
+[8] = 356818,
 }
 DoReady.Monk.Windwalker.MythicPlus.Fortified.Talents = {
 [1] = 123986,
@@ -40,12 +40,12 @@ DoReady.Monk.Mistweaver.MythicPlus.Fortified.Legendarys = {
 [2] = 356818,
 [3] = 337473,
 [4] = 356684,
-[5] = 337298,
-[6] = 337343,
-[7] = 356705,
-[8] = 337296,
-[9] = 337225,
-[10] = 356592,
+[5] = 337343,
+[6] = 337298,
+[7] = 364857,
+[8] = 356705,
+[9] = 337296,
+[10] = 337225,
 }
 DoReady.Monk.Mistweaver.MythicPlus.Fortified.Talents = {
 [1] = 197900,

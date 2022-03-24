@@ -1,10 +1,10 @@
 DoReady.Mage.Frost.Raid.Legendarys = {
-[1] = 327364,
-[2] = 327508,
-[3] = 327492,
-[4] = 354294,
-[5] = 327365,
-[6] = 327284,
+[1] = 327508,
+[2] = 327364,
+[3] = 364852,
+[4] = 327492,
+[5] = 327284,
+[6] = 354294,
 }
 DoReady.Mage.Frost.Raid.Talents = {
 [2] = 205024,
@@ -17,7 +17,8 @@ DoReady.Mage.Frost.Raid.Talents = {
 }
 DoReady.Mage.Fire.Raid.Legendarys = {
 [1] = 333313,
-[2] = 327365,
+[2] = 364852,
+[3] = 327365,
 }
 DoReady.Mage.Fire.Raid.Talents = {
 [2] = 269644,
@@ -30,12 +31,11 @@ DoReady.Mage.Fire.Raid.Talents = {
 }
 DoReady.Mage.Arcane.Raid.Legendarys = {
 [1] = 332769,
-[2] = 332928,
-[3] = 327351,
-[4] = 354333,
-[5] = 327489,
-[6] = 332892,
-[7] = 338477,
+[2] = 364852,
+[3] = 332928,
+[4] = 327351,
+[5] = 354333,
+[6] = 327489,
 }
 DoReady.Mage.Arcane.Raid.Talents = {
 [2] = 236628,

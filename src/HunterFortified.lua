@@ -2,11 +2,13 @@ DoReady.Hunter.BeastMastery.MythicPlus.Fortified.Legendarys = {
 [1] = 356375,
 [2] = 336844,
 [3] = 356618,
-[4] = 356264,
-[5] = 336867,
-[6] = 336895,
-[7] = 336745,
-[8] = 336819,
+[4] = 364743,
+[5] = 356264,
+[6] = 336867,
+[7] = 336822,
+[8] = 336830,
+[9] = 336895,
+[10] = 336819,
 }
 DoReady.Hunter.BeastMastery.MythicPlus.Fortified.Talents = {
 [1] = 267116,
@@ -22,10 +24,10 @@ DoReady.Hunter.Marksmanship.MythicPlus.Fortified.Legendarys = {
 [2] = 356264,
 [3] = 336878,
 [4] = 356375,
-[5] = 336870,
-[6] = 356618,
-[7] = 336844,
-[8] = 356262,
+[5] = 364743,
+[6] = 336870,
+[7] = 356618,
+[8] = 336844,
 }
 DoReady.Hunter.Marksmanship.MythicPlus.Fortified.Talents = {
 [1] = 260309,
@@ -38,9 +40,10 @@ DoReady.Hunter.Marksmanship.MythicPlus.Fortified.Talents = {
 }
 DoReady.Hunter.Survival.MythicPlus.Fortified.Legendarys = {
 [1] = 336895,
-[2] = 356618,
-[3] = 356375,
+[2] = 364743,
+[3] = 356618,
 [4] = 356264,
+[5] = 356375,
 }
 DoReady.Hunter.Survival.MythicPlus.Fortified.Talents = {
 [1] = 269737,

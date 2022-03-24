@@ -4,11 +4,11 @@ DoReady.Warrior.Protection.MythicPlus.Fortified.Legendarys = {
 [3] = 357996,
 [4] = 335758,
 [5] = 335629,
-[6] = 353577,
+[6] = 364929,
 [7] = 335266,
-[8] = 335214,
-[9] = 335567,
-[10] = 335229,
+[8] = 353577,
+[9] = 335214,
+[10] = 335567,
 }
 DoReady.Warrior.Protection.MythicPlus.Fortified.Talents = {
 [1] = 236279,
@@ -23,7 +23,9 @@ DoReady.Warrior.Arms.MythicPlus.Fortified.Legendarys = {
 [1] = 357996,
 [2] = 335458,
 [3] = 335266,
-[4] = 354161,
+[4] = 364929,
+[5] = 354161,
+[6] = 335451,
 }
 DoReady.Warrior.Arms.MythicPlus.Fortified.Talents = {
 [1] = 29725,
@@ -35,12 +37,12 @@ DoReady.Warrior.Arms.MythicPlus.Fortified.Talents = {
 [7] = 262150,
 }
 DoReady.Warrior.Fury.MythicPlus.Fortified.Legendarys = {
-[1] = 357996,
-[2] = 335266,
-[3] = 335567,
-[4] = 353577,
-[5] = 354131,
-[6] = 335458,
+[1] = 335266,
+[2] = 357996,
+[3] = 364929,
+[4] = 335567,
+[5] = 353577,
+[6] = 335758,
 }
 DoReady.Warrior.Fury.MythicPlus.Fortified.Talents = {
 [1] = 215568,

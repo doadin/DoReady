@@ -1,10 +1,11 @@
 DoReady.Priest.Discipline.Raid.Legendarys = {
 [1] = 336067,
 [2] = 356395,
-[3] = 336011,
-[4] = 356392,
-[5] = 336897,
-[6] = 336266,
+[3] = 364911,
+[4] = 336011,
+[5] = 356392,
+[6] = 336897,
+[7] = 336266,
 }
 DoReady.Priest.Discipline.Raid.Talents = {
 [2] = 214621,
@@ -17,7 +18,10 @@ DoReady.Priest.Discipline.Raid.Talents = {
 }
 DoReady.Priest.Holy.Raid.Legendarys = {
 [1] = 336266,
-[2] = 336314,
+[2] = 364911,
+[3] = 336314,
+[4] = 337477,
+[5] = 356392,
 }
 DoReady.Priest.Holy.Raid.Talents = {
 [2] = 200128,
@@ -30,15 +34,18 @@ DoReady.Priest.Holy.Raid.Talents = {
 }
 DoReady.Priest.Shadow.Raid.Legendarys = {
 [1] = 336143,
-[2] = 342415,
-[3] = 356390,
-[4] = 356395,
+[2] = 364911,
+[3] = 342415,
+[4] = 356390,
 [5] = 336897,
+[6] = 336214,
+[7] = 336266,
+[8] = 356395,
 }
 DoReady.Priest.Shadow.Raid.Talents = {
 [2] = 193195,
 [3] = 64129,
-[4] = 238558,
+[4] = 109142,
 [5] = 64044,
 [6] = 155271,
 [7] = 200174,

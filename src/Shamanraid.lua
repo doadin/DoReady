@@ -1,9 +1,8 @@
 DoReady.Shaman.Enhancement.Raid.Legendarys = {
 [1] = 335897,
-[2] = 335895,
-[3] = 335902,
-[4] = 356250,
-[5] = 336738,
+[2] = 364738,
+[3] = 335895,
+[4] = 336734,
 }
 DoReady.Shaman.Enhancement.Raid.Talents = {
 [2] = 117014,
@@ -17,9 +16,12 @@ DoReady.Shaman.Enhancement.Raid.Talents = {
 DoReady.Shaman.Elemental.Raid.Legendarys = {
 [1] = 336063,
 [2] = 336215,
-[3] = 336734,
-[4] = 356218,
-[5] = 356789,
+[3] = 364738,
+[4] = 336734,
+[5] = 356218,
+[6] = 336738,
+[7] = 356789,
+[8] = 335889,
 }
 DoReady.Shaman.Elemental.Raid.Talents = {
 [2] = 333919,
@@ -31,16 +33,16 @@ DoReady.Shaman.Elemental.Raid.Talents = {
 [8] = 191634,
 }
 DoReady.Shaman.Restoration.Raid.Legendarys = {
-[1] = 335889,
-[2] = 356250,
-[3] = 356218,
-[4] = 356789,
-[5] = 336738,
+[1] = 356250,
+[2] = 335889,
+[3] = 364738,
+[4] = 356218,
+[5] = 356789,
 [6] = 335893,
 [7] = 336739,
-[8] = 335891,
-[9] = 339351,
-[10] = 336735,
+[8] = 336738,
+[9] = 335891,
+[10] = 336734,
 }
 DoReady.Shaman.Restoration.Raid.Talents = {
 [2] = 200072,

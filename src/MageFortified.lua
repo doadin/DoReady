@@ -1,13 +1,14 @@
 DoReady.Mage.Frost.MythicPlus.Fortified.Legendarys = {
 [1] = 327364,
 [2] = 327365,
-[3] = 327492,
-[4] = 327508,
-[5] = 327284,
-[6] = 356877,
-[7] = 354294,
+[3] = 327508,
+[4] = 327492,
+[5] = 364852,
+[6] = 327284,
+[7] = 356877,
 [8] = 333313,
 [9] = 332769,
+[10] = 354294,
 }
 DoReady.Mage.Frost.MythicPlus.Fortified.Talents = {
 [1] = 205024,
@@ -21,9 +22,11 @@ DoReady.Mage.Frost.MythicPlus.Fortified.Talents = {
 DoReady.Mage.Fire.MythicPlus.Fortified.Legendarys = {
 [1] = 327365,
 [2] = 333313,
-[3] = 333030,
-[4] = 327364,
-[5] = 327508,
+[3] = 364852,
+[4] = 333030,
+[5] = 327364,
+[6] = 333373,
+[7] = 327508,
 }
 DoReady.Mage.Fire.MythicPlus.Fortified.Talents = {
 [1] = 269644,
@@ -36,11 +39,13 @@ DoReady.Mage.Fire.MythicPlus.Fortified.Talents = {
 }
 DoReady.Mage.Arcane.MythicPlus.Fortified.Legendarys = {
 [1] = 332769,
-[2] = 332892,
-[3] = 332928,
+[2] = 364852,
+[3] = 332892,
 [4] = 327489,
-[5] = 327364,
-[6] = 333313,
+[5] = 332928,
+[6] = 327364,
+[7] = 333313,
+[8] = 327365,
 }
 DoReady.Mage.Arcane.MythicPlus.Fortified.Talents = {
 [1] = 236628,

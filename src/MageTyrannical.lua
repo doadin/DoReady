@@ -1,9 +1,13 @@
 DoReady.Mage.Frost.MythicPlus.Tyrannical.Legendarys = {
 [1] = 327364,
-[2] = 356877,
+[2] = 327365,
 [3] = 327492,
-[4] = 327365,
-[5] = 333313,
+[4] = 327508,
+[5] = 327284,
+[6] = 356877,
+[7] = 354294,
+[8] = 333313,
+[9] = 332769,
 }
 DoReady.Mage.Frost.MythicPlus.Tyrannical.Talents = {
 [1] = 205024,
@@ -11,18 +15,15 @@ DoReady.Mage.Frost.MythicPlus.Tyrannical.Talents = {
 [3] = 116011,
 [4] = 278309,
 [5] = 205036,
-[6] = 270233,
+[6] = 56377,
 [7] = 155149,
 }
 DoReady.Mage.Fire.MythicPlus.Tyrannical.Legendarys = {
 [1] = 327365,
 [2] = 333313,
 [3] = 333030,
-[4] = 333097,
-[5] = 327364,
-[6] = 333373,
-[7] = 332928,
-[8] = 356877,
+[4] = 327364,
+[5] = 327508,
 }
 DoReady.Mage.Fire.MythicPlus.Tyrannical.Talents = {
 [1] = 269644,
@@ -38,11 +39,8 @@ DoReady.Mage.Arcane.MythicPlus.Tyrannical.Legendarys = {
 [2] = 332892,
 [3] = 332928,
 [4] = 327489,
-[5] = 327351,
-[6] = 354333,
-[7] = 333373,
-[8] = 327365,
-[9] = 354294,
+[5] = 327364,
+[6] = 333313,
 }
 DoReady.Mage.Arcane.MythicPlus.Tyrannical.Talents = {
 [1] = 236628,
