@@ -1,14 +1,14 @@
 DoReady.DeathKnight.Blood.MythicPlus.Tyrannical.Legendarys = {
 [1] = 334525,
-[2] = 334974,
+[2] = 353447,
 [3] = 353882,
-[4] = 353447,
-[5] = 334949,
-[6] = 334580,
+[4] = 334974,
+[5] = 353699,
+[6] = 353822,
 [7] = 335177,
-[8] = 334501,
-[9] = 353699,
-[10] = 334724,
+[8] = 334580,
+[9] = 341724,
+[10] = 334501,
 }
 DoReady.DeathKnight.Blood.MythicPlus.Tyrannical.Talents = {
 [1] = 221536,
@@ -21,12 +21,15 @@ DoReady.DeathKnight.Blood.MythicPlus.Tyrannical.Talents = {
 }
 DoReady.DeathKnight.Frost.MythicPlus.Tyrannical.Legendarys = {
 [1] = 341724,
-[2] = 334678,
-[3] = 334583,
-[4] = 353447,
-[5] = 334692,
-[6] = 335177,
-[7] = 334949,
+[2] = 353447,
+[3] = 334678,
+[4] = 353882,
+[5] = 334583,
+[6] = 353699,
+[7] = 353822,
+[8] = 335177,
+[9] = 334692,
+[10] = 334525,
 }
 DoReady.DeathKnight.Frost.MythicPlus.Tyrannical.Talents = {
 [1] = 281208,
@@ -39,12 +42,15 @@ DoReady.DeathKnight.Frost.MythicPlus.Tyrannical.Talents = {
 }
 DoReady.DeathKnight.Unholy.MythicPlus.Tyrannical.Legendarys = {
 [1] = 334888,
-[2] = 334949,
-[3] = 334836,
-[4] = 353447,
+[2] = 353447,
+[3] = 334949,
+[4] = 334836,
 [5] = 353882,
-[6] = 353822,
-[7] = 334898,
+[6] = 353699,
+[7] = 335177,
+[8] = 334678,
+[9] = 334974,
+[10] = 353822,
 }
 DoReady.DeathKnight.Unholy.MythicPlus.Tyrannical.Talents = {
 [1] = 207311,
