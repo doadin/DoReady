@@ -1,8 +1,8 @@
 DoReady.Shaman.Enhancement.Raid.Legendarys = {
 [1] = 335897,
 [2] = 356218,
-[3] = 354647,
-[4] = 335895,
+[3] = 335895,
+[4] = 354647,
 [5] = 356250,
 [6] = 336734,
 }
@@ -24,8 +24,8 @@ DoReady.Shaman.Elemental.Raid.Legendarys = {
 [6] = 356250,
 [7] = 336734,
 [8] = 356789,
-[9] = 336730,
-[10] = 335889,
+[9] = 335889,
+[10] = 336730,
 }
 DoReady.Shaman.Elemental.Raid.Talents = {
 [2] = 333919,

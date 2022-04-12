@@ -4,11 +4,11 @@ DoReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Legendarys = {
 [3] = 356618,
 [4] = 356264,
 [5] = 356262,
-[6] = 336867,
-[7] = 336745,
-[8] = 336822,
-[9] = 336830,
-[10] = 336819,
+[6] = 336819,
+[7] = 336867,
+[8] = 336745,
+[9] = 336878,
+[10] = 336822,
 }
 DoReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Talents = {
 [1] = 267116,
@@ -20,15 +20,14 @@ DoReady.Hunter.BeastMastery.MythicPlus.Tyrannical.Talents = {
 [7] = 191384,
 }
 DoReady.Hunter.Marksmanship.MythicPlus.Tyrannical.Legendarys = {
-[1] = 336867,
-[2] = 356262,
-[3] = 336878,
+[1] = 356262,
+[2] = 336878,
+[3] = 336867,
 [4] = 356264,
 [5] = 356375,
-[6] = 336870,
+[6] = 356618,
 [7] = 336844,
-[8] = 356618,
-[9] = 336895,
+[8] = 336870,
 }
 DoReady.Hunter.Marksmanship.MythicPlus.Tyrannical.Talents = {
 [1] = 260309,
@@ -45,8 +44,7 @@ DoReady.Hunter.Survival.MythicPlus.Tyrannical.Legendarys = {
 [3] = 356375,
 [4] = 356264,
 [5] = 356618,
-[6] = 336844,
-[7] = 336878,
+[6] = 336878,
 }
 DoReady.Hunter.Survival.MythicPlus.Tyrannical.Talents = {
 [1] = 269737,

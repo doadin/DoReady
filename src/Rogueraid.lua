@@ -5,10 +5,10 @@ DoReady.Rogue.Outlaw.Raid.Legendarys = {
 [4] = 354703,
 [5] = 354731,
 [6] = 354473,
-[7] = 340085,
-[8] = 340088,
-[9] = 340092,
-[10] = 340076,
+[7] = 340088,
+[8] = 340092,
+[9] = 340085,
+[10] = 340089,
 }
 DoReady.Rogue.Outlaw.Raid.Talents = {
 [2] = 196937,
@@ -28,7 +28,8 @@ DoReady.Rogue.Assassination.Raid.Legendarys = {
 [6] = 340082,
 [7] = 340081,
 [8] = 354837,
-[9] = 340076,
+[9] = 340092,
+[10] = 340076,
 }
 DoReady.Rogue.Assassination.Raid.Talents = {
 [2] = 193640,
@@ -51,7 +52,7 @@ DoReady.Rogue.Subtlety.Raid.Talents = {
 [3] = 108209,
 [4] = 193531,
 [5] = 31230,
-[6] = 131511,
+[6] = 277953,
 [7] = 238104,
 [8] = 196976,
 }

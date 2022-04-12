@@ -23,6 +23,7 @@ DoReady.Priest.Holy.Raid.Legendarys = {
 [5] = 356395,
 [6] = 336314,
 [7] = 337477,
+[8] = 336470,
 }
 DoReady.Priest.Holy.Raid.Talents = {
 [2] = 200128,
@@ -42,7 +43,6 @@ DoReady.Priest.Shadow.Raid.Legendarys = {
 [6] = 336214,
 [7] = 336897,
 [8] = 336266,
-[9] = 356395,
 }
 DoReady.Priest.Shadow.Raid.Talents = {
 [2] = 193195,
