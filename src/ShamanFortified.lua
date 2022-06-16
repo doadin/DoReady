@@ -1,14 +1,14 @@
 DoReady.Shaman.Enhancement.MythicPlus.Fortified.Legendarys = {
 [1] = 335895,
 [2] = 354647,
-[3] = 356218,
-[4] = 335897,
-[5] = 356250,
+[3] = 335897,
+[4] = 356250,
+[5] = 356218,
 [6] = 336734,
 [7] = 335902,
 [8] = 356789,
 [9] = 336738,
-[10] = 336735,
+[10] = 336739,
 }
 DoReady.Shaman.Enhancement.MythicPlus.Fortified.Talents = {
 [1] = 334046,
@@ -28,7 +28,7 @@ DoReady.Shaman.Elemental.MythicPlus.Fortified.Legendarys = {
 [6] = 356250,
 [7] = 336738,
 [8] = 356789,
-[9] = 336730,
+[9] = 336735,
 [10] = 336739,
 }
 DoReady.Shaman.Elemental.MythicPlus.Fortified.Talents = {
@@ -45,12 +45,12 @@ DoReady.Shaman.Restoration.MythicPlus.Fortified.Legendarys = {
 [2] = 336739,
 [3] = 336735,
 [4] = 356250,
-[5] = 336734,
-[6] = 335889,
-[7] = 354647,
+[5] = 354647,
+[6] = 335893,
+[7] = 336734,
 [8] = 336730,
-[9] = 356218,
-[10] = 336738,
+[9] = 335889,
+[10] = 335891,
 }
 DoReady.Shaman.Restoration.MythicPlus.Fortified.Talents = {
 [1] = 200071,
