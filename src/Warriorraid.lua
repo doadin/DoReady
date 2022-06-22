@@ -26,9 +26,8 @@ DoReady.Warrior.Arms.Raid.Legendarys = {
 [4] = 335266,
 [5] = 354131,
 [6] = 335758,
-[7] = 335274,
-[8] = 335451,
-[9] = 353577,
+[7] = 335567,
+[8] = 353577,
 }
 DoReady.Warrior.Arms.Raid.Talents = {
 [2] = 29725,

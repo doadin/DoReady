@@ -3,9 +3,9 @@ DoReady.Hunter.BeastMastery.Raid.Legendarys = {
 [2] = 356375,
 [3] = 356618,
 [4] = 336895,
-[5] = 336878,
+[5] = 356262,
 [6] = 356264,
-[7] = 356262,
+[7] = 336878,
 }
 DoReady.Hunter.BeastMastery.Raid.Talents = {
 [2] = 267116,
@@ -20,11 +20,10 @@ DoReady.Hunter.Marksmanship.Raid.Legendarys = {
 [1] = 336878,
 [2] = 356375,
 [3] = 356618,
-[4] = 336867,
-[5] = 356262,
+[4] = 356262,
+[5] = 336867,
 [6] = 356264,
 [7] = 336895,
-[8] = 336844,
 }
 DoReady.Hunter.Marksmanship.Raid.Talents = {
 [2] = 260309,

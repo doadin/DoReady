@@ -1,14 +1,11 @@
 DoReady.DemonHunter.Vengeance.MythicPlus.Tyrannical.Legendarys = {
 [1] = 355893,
 [2] = 337534,
-[3] = 337547,
-[4] = 337544,
-[5] = 337504,
-[6] = 355886,
-[7] = 355996,
-[8] = 355890,
-[9] = 337775,
-[10] = 337541,
+[3] = 355996,
+[4] = 337547,
+[5] = 337544,
+[6] = 337504,
+[7] = 355886,
 }
 DoReady.DemonHunter.Vengeance.MythicPlus.Tyrannical.Talents = {
 [1] = 207548,
@@ -20,16 +17,15 @@ DoReady.DemonHunter.Vengeance.MythicPlus.Tyrannical.Talents = {
 [7] = 209258,
 }
 DoReady.DemonHunter.Havoc.MythicPlus.Tyrannical.Legendarys = {
-[1] = 337504,
-[2] = 355886,
-[3] = 355890,
-[4] = 346279,
-[5] = 337534,
+[1] = 355886,
+[2] = 337504,
+[3] = 337534,
+[4] = 355890,
+[5] = 346279,
 [6] = 355996,
 [7] = 337551,
-[8] = 355893,
-[9] = 337544,
-[10] = 337547,
+[8] = 337775,
+[9] = 355893,
 }
 DoReady.DemonHunter.Havoc.MythicPlus.Tyrannical.Talents = {
 [1] = 203550,

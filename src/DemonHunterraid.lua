@@ -7,8 +7,8 @@ DoReady.DemonHunter.Vengeance.Raid.Legendarys = {
 [6] = 355890,
 [7] = 337504,
 [8] = 355996,
-[9] = 337545,
-[10] = 346279,
+[9] = 346279,
+[10] = 337551,
 }
 DoReady.DemonHunter.Vengeance.Raid.Talents = {
 [2] = 207548,
@@ -24,8 +24,7 @@ DoReady.DemonHunter.Havoc.Raid.Legendarys = {
 [2] = 337504,
 [3] = 337534,
 [4] = 337551,
-[5] = 346279,
-[6] = 355890,
+[5] = 355890,
 }
 DoReady.DemonHunter.Havoc.Raid.Talents = {
 [2] = 203550,

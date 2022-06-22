@@ -5,10 +5,10 @@ DoReady.Paladin.Protection.Raid.Legendarys = {
 [4] = 355098,
 [5] = 337681,
 [6] = 355099,
-[7] = 337838,
-[8] = 355100,
-[9] = 337831,
-[10] = 340458,
+[7] = 355100,
+[8] = 337838,
+[9] = 337638,
+[10] = 337831,
 }
 DoReady.Paladin.Protection.Raid.Talents = {
 [2] = 152261,
@@ -27,9 +27,9 @@ DoReady.Paladin.Retribution.Raid.Legendarys = {
 [5] = 355447,
 [6] = 355099,
 [7] = 355100,
-[8] = 337594,
+[8] = 337812,
 [9] = 337638,
-[10] = 340458,
+[10] = 337594,
 }
 DoReady.Paladin.Retribution.Raid.Talents = {
 [2] = 269569,
@@ -49,8 +49,8 @@ DoReady.Paladin.Holy.Raid.Legendarys = {
 [6] = 337825,
 [7] = 337847,
 [8] = 337594,
-[9] = 337638,
-[10] = 337777,
+[9] = 337257,
+[10] = 337638,
 }
 DoReady.Paladin.Holy.Raid.Talents = {
 [2] = 114158,
