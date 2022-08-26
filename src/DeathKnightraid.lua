@@ -5,7 +5,6 @@ DoReady.DeathKnight.Blood.Raid.Legendarys = {
 [4] = 353882,
 [5] = 353699,
 [6] = 334724,
-[7] = 334974,
 }
 DoReady.DeathKnight.Blood.Raid.Talents = {
 [2] = 219809,
@@ -23,9 +22,10 @@ DoReady.DeathKnight.Frost.Raid.Legendarys = {
 [4] = 334678,
 [5] = 334583,
 [6] = 335177,
-[7] = 334525,
-[8] = 353822,
+[7] = 353822,
+[8] = 334692,
 [9] = 334724,
+[10] = 334949,
 }
 DoReady.DeathKnight.Frost.Raid.Talents = {
 [2] = 194878,
@@ -38,13 +38,11 @@ DoReady.DeathKnight.Frost.Raid.Talents = {
 }
 DoReady.DeathKnight.Unholy.Raid.Legendarys = {
 [1] = 353447,
-[2] = 334949,
-[3] = 334888,
-[4] = 334836,
-[5] = 353882,
-[6] = 334525,
-[7] = 353699,
-[8] = 334724,
+[2] = 334888,
+[3] = 334949,
+[4] = 353882,
+[5] = 334836,
+[6] = 341724,
 }
 DoReady.DeathKnight.Unholy.Raid.Talents = {
 [2] = 207311,

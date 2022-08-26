@@ -1,11 +1,14 @@
 DoReady.DemonHunter.Vengeance.MythicPlus.Fortified.Legendarys = {
-[1] = 337534,
-[2] = 355893,
-[3] = 355996,
-[4] = 337544,
+[1] = 355893,
+[2] = 337534,
+[3] = 337544,
+[4] = 337504,
 [5] = 337547,
-[6] = 337504,
-[7] = 355886,
+[6] = 355886,
+[7] = 355996,
+[8] = 355890,
+[9] = 337545,
+[10] = 346279,
 }
 DoReady.DemonHunter.Vengeance.MythicPlus.Fortified.Talents = {
 [1] = 207548,
@@ -23,8 +26,10 @@ DoReady.DemonHunter.Havoc.MythicPlus.Fortified.Legendarys = {
 [4] = 355890,
 [5] = 346279,
 [6] = 355996,
-[7] = 337551,
-[8] = 355893,
+[7] = 355893,
+[8] = 337551,
+[9] = 337544,
+[10] = 337547,
 }
 DoReady.DemonHunter.Havoc.MythicPlus.Fortified.Talents = {
 [1] = 203550,

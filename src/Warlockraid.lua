@@ -1,14 +1,14 @@
 DoReady.Warlock.Affliction.Raid.Legendarys = {
 [1] = 356362,
-[2] = 337122,
-[3] = 337057,
-[4] = 356342,
-[5] = 337128,
-[6] = 337020,
+[2] = 337057,
+[3] = 337122,
+[4] = 337020,
+[5] = 356342,
+[6] = 337128,
 [7] = 337106,
 [8] = 337111,
-[9] = 356254,
-[10] = 356259,
+[9] = 337141,
+[10] = 356254,
 }
 DoReady.Warlock.Affliction.Raid.Talents = {
 [2] = 198590,
@@ -27,8 +27,9 @@ DoReady.Warlock.Destruction.Raid.Legendarys = {
 [5] = 356342,
 [6] = 337272,
 [7] = 337166,
-[8] = 337057,
-[9] = 356259,
+[8] = 337163,
+[9] = 337057,
+[10] = 337122,
 }
 DoReady.Warlock.Destruction.Raid.Talents = {
 [2] = 196412,
@@ -42,9 +43,10 @@ DoReady.Warlock.Destruction.Raid.Talents = {
 DoReady.Warlock.Demonology.Raid.Legendarys = {
 [1] = 356362,
 [2] = 337020,
-[3] = 337135,
-[4] = 337141,
-[5] = 356259,
+[3] = 337141,
+[4] = 337135,
+[5] = 337057,
+[6] = 337169,
 }
 DoReady.Warlock.Demonology.Raid.Talents = {
 [2] = 264078,

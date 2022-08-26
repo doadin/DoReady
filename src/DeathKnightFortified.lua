@@ -1,8 +1,8 @@
 DoReady.DeathKnight.Blood.MythicPlus.Fortified.Legendarys = {
 [1] = 334525,
 [2] = 353822,
-[3] = 353447,
-[4] = 353882,
+[3] = 353882,
+[4] = 353447,
 }
 DoReady.DeathKnight.Blood.MythicPlus.Fortified.Talents = {
 [1] = 219809,
@@ -16,13 +16,13 @@ DoReady.DeathKnight.Blood.MythicPlus.Fortified.Talents = {
 DoReady.DeathKnight.Frost.MythicPlus.Fortified.Legendarys = {
 [1] = 334678,
 [2] = 353882,
-[3] = 353447,
-[4] = 341724,
-[5] = 353699,
-[6] = 353822,
-[7] = 334583,
-[8] = 335177,
-[9] = 334525,
+[3] = 341724,
+[4] = 353447,
+[5] = 353822,
+[6] = 334583,
+[7] = 335177,
+[8] = 334525,
+[9] = 353699,
 [10] = 334692,
 }
 DoReady.DeathKnight.Frost.MythicPlus.Fortified.Talents = {
@@ -42,9 +42,9 @@ DoReady.DeathKnight.Unholy.MythicPlus.Fortified.Legendarys = {
 [5] = 353882,
 [6] = 353699,
 [7] = 335177,
-[8] = 353822,
+[8] = 334898,
 [9] = 334525,
-[10] = 334974,
+[10] = 353822,
 }
 DoReady.DeathKnight.Unholy.MythicPlus.Fortified.Talents = {
 [1] = 207311,
