@@ -1,7 +1,7 @@
 ## Interface: 90207
 ## Version: @project-version@
 
-## Notes: Inventory Management with virtual bags divided into sections.
+## Notes: Checks if you are missing talents or enchants.
 
 ## Author: Doadin
 ## SavedVariables:
@@ -19,42 +19,43 @@ Libs\Ace3\AceSerializer-3.0\AceSerializer-3.0.lua
 Libs\LibDBIcon-1.0\embeds.xml
 Libs\LibDeflate\lib.xml
 
-Core.lua
-UI.lua
+#Core.lua
+#UI.lua
+UI2.lua
 
-src\DeathKnightFortified.lua
-src\DeathKnightraid.lua
-src\DeathKnightTyrannical.lua
-src\DemonHunterFortified.lua
-src\DemonHunterraid.lua
-src\DemonHunterTyrannical.lua
-src\DruidFortified.lua
-src\Druidraid.lua
-src\DruidTyrannical.lua
-src\HunterFortified.lua
-src\Hunterraid.lua
-src\HunterTyrannical.lua
-src\MageFortified.lua
-src\Mageraid.lua
-src\MageTyrannical.lua
-src\MonkFortified.lua
-src\Monkraid.lua
-src\MonkTyrannical.lua
-src\PaladinFortified.lua
-src\Paladinraid.lua
-src\PaladinTyrannical.lua
-src\PriestFortified.lua
-src\Priestraid.lua
-src\PriestTyrannical.lua
-src\RogueFortified.lua
-src\Rogueraid.lua
-src\RogueTyrannical.lua
-src\ShamanFortified.lua
-src\Shamanraid.lua
-src\ShamanTyrannical.lua
-src\WarlockFortified.lua
-src\Warlockraid.lua
-src\WarlockTyrannical.lua
-src\WarriorFortified.lua
-src\Warriorraid.lua
-src\WarriorTyrannical.lua
+#src\DeathKnightFortified.lua
+#src\DeathKnightraid.lua
+#src\DeathKnightTyrannical.lua
+#src\DemonHunterFortified.lua
+#src\DemonHunterraid.lua
+#src\DemonHunterTyrannical.lua
+#src\DruidFortified.lua
+#src\Druidraid.lua
+#src\DruidTyrannical.lua
+#src\HunterFortified.lua
+#src\Hunterraid.lua
+#src\HunterTyrannical.lua
+#src\MageFortified.lua
+#src\Mageraid.lua
+#src\MageTyrannical.lua
+#src\MonkFortified.lua
+#src\Monkraid.lua
+#src\MonkTyrannical.lua
+#src\PaladinFortified.lua
+#src\Paladinraid.lua
+#src\PaladinTyrannical.lua
+#src\PriestFortified.lua
+#src\Priestraid.lua
+#src\PriestTyrannical.lua
+#src\RogueFortified.lua
+#src\Rogueraid.lua
+#src\RogueTyrannical.lua
+#src\ShamanFortified.lua
+#src\Shamanraid.lua
+#src\ShamanTyrannical.lua
+#src\WarlockFortified.lua
+#src\Warlockraid.lua
+#src\WarlockTyrannical.lua
+#src\WarriorFortified.lua
+#src\Warriorraid.lua
+#src\WarriorTyrannical.lua
