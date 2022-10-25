@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100000
 ## Version: @project-version@
 
 ## Notes: Checks if you are missing talents or enchants.
