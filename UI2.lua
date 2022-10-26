@@ -19,7 +19,7 @@ local VengeanceDemonHunterString = "BUkACnvaHJn8GSPD6tpaeczPTBAgIUCREARCQCgEtEJC
 
 --Monk--
 local BrewmasterMonkString = "BwQAdeydY63Y4XKaboK13uRRQAAAAAAAQAAAAAFKtkkQIJp1IAAAApFKJRiEJhkkEIgDIEplCA"
-local MistweaverMonkString = "B4QAxp+Ou6i7imp/wvH4suqWJKBkkAFNJSESSDiUEAAAAAAAAAAAAAgSIRSiEQSSaJEAAI"
+local MistweaverMonkString = "B4QAAAAAAAAAAAAAAAAAAAAAAIBkkAFNJSESSDiUEAAAAAAAAAAAAAgSIRSiEQSSaJEAAI"
 local WindwalkerMonkString = "B0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAESkkElISSAAAAAJJkAASSgDkSkISIRkkEaJAAAA"
 
 --Shaman--
@@ -35,7 +35,7 @@ local RestorationDruidString = "BkGAGX1kx6Mci9Zl2t+S+sRoPCJJaSSSCpFAJQJtkAAAAAAA
 
 --Paladin
 --BEEAwtJ2KpR8WbGzhz/jy2AP8AAAAAAQEAAAAAAAlIISJlkkWBRSQJBgENJIpkEJJJFOgE0oEA
-local HolyPaladinString = "BEEAmU6nJEmu625yPWI4xfCaFDAAAAAQSAAAAAAAUSCQJSSKNRKJBlEQANJJJpIhkEl0AUQA"
+local HolyPaladinString = "BEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQSAAAAAAAUSCQJSSKNRKJBlEQANJRSKSIJRJFAFEB"
 local ProtectionPaladinString = "BIEAAAAAAAAAAAAAAAAAAAAAA0iWChoItkElSDJSgQAAAAAAAAAAAAAAQTkkECkElUCQJKB"
 local RetributionPaladinString = "BYEAwtJ2KpR8WbGzhz/jy2AP8AAAAAAICBgolWSC5AAkSKJJpVCAAAAAAg0EJJpJQCFkEUiSA"
 
@@ -50,13 +50,13 @@ local MarksmanshipHunterString = "B4PAAAAAAAAAAAAAAAAAAAAAA4AEaBgIIIAAAAARSEJJIi
 local SurvivalHunterString = "B8PAAAAAAAAAAAAAAAAAAAAAAQgWQCIBBJCplEIkkEkIAAAAAAhCKaCJSIhEKAAAAAA"
 
 --Priest--
-local DisciplinePriestString = "BAQAMQPJVw4PNQ4RvJbZJh+EDCAkUAolEcAEl0SSiIJAAAAAAAAAAAASaokECiQkEhQkICKK"
-local HolyPriestString = "BEQAMQPJVw4PNQ4RvJbZJh+EDCAAAAAAAQBRKIkkIQikIKJJAAAAAgkCKJBIiEJRQxBkkkAA"
+local DisciplinePriestString = "BAQAAAAAAAAAAAAAAAAAAAAAAAAkUAolEcAElUSSiIJAAAAAAAAAAAASaokECiQkEhQkICKK"
+local HolyPriestString = "BEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBRKIkkIQikIKJJAAAAAgkGKJBIiEJRQxBkkkAA"
 local ShadowPriestString = "BIQAAAAAAAAAAAAAAAAAAAAAAgkgEAAAAAAAAAAAAAkIKpFSBJJJFiEgGJRiESIBBlWESCA"
 
 --Warrior
-local ArmsWarriorString = "BcEAAAAAAAAAAAAAAAAAAAAAAAQKRikkEkDEalEJBAAAABEJKkQUEJQIwBoIRIAQIAAAAAAAAAtEAIE"
-local FuryWarriorString = "BgEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQCKJEEBhIwB0ISICEESCJJSkAIJJhSaBQSSAAAAB"
+local ArmsWarriorString = "BcEAAAAAAAAAAAAAAAAAAAAAAAQKRikkEkDEalEJBAAAABEJKkQUSkAhAHgiEhACECAAAAAAAAQLBAA"
+local FuryWarriorString = "BgEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQCKJEEBhIwB0ISICSQIJkkIRCgkkEKpFAJJBAAAA"
 local ProtectionWarriorString = "BkEAtml4yL3PsSlRlqnvTeVx4LgAAAAASSSkkQSLpkgWBRgQRiElkEgAAtQSCIQIAAAAAAAABAAlG"
 
 local AceGUI = LibStub("AceGUI-3.0")
@@ -365,7 +365,7 @@ local function GetTalents(_,event, one, two)
             local btn2 = AceGUI:Create("Button")
             btn2:SetWidth(165)
             btn2:SetText("Holy Priest")
-            btn1:SetCallback("OnClick", function()
+            btn2:SetCallback("OnClick", function()
                 local editbox = AceGUI:Create("MultiLineEditBox")
                 editbox:SetText(HolyPriestString)
                 editbox:SetLabel('Holy Priest Import String')
@@ -384,7 +384,7 @@ local function GetTalents(_,event, one, two)
             local btn3 = AceGUI:Create("Button")
             btn3:SetWidth(165)
             btn3:SetText("Shadow Priest")
-            btn1:SetCallback("OnClick", function()
+            btn3:SetCallback("OnClick", function()
                 local editbox = AceGUI:Create("MultiLineEditBox")
                 editbox:SetText(ShadowPriestString)
                 editbox:SetLabel('Shadow Priest Import String')
@@ -542,7 +542,7 @@ local function GetTalents(_,event, one, two)
             local btn2 = AceGUI:Create("Button")
             btn2:SetWidth(165)
             btn2:SetText("Fire Mage")
-            btn1:SetCallback("OnClick", function()
+            btn2:SetCallback("OnClick", function()
                 local editbox = AceGUI:Create("MultiLineEditBox")
                 editbox:SetText(FireMageString)
                 editbox:SetLabel('Fire Mage Import String')
@@ -561,7 +561,7 @@ local function GetTalents(_,event, one, two)
             local btn3 = AceGUI:Create("Button")
             btn3:SetWidth(165)
             btn3:SetText("Frost Mage")
-            btn1:SetCallback("OnClick", function()
+            btn3:SetCallback("OnClick", function()
                 local editbox = AceGUI:Create("MultiLineEditBox")
                 editbox:SetText(FrostMageString)
                 editbox:SetLabel('Frost Mage Import String')
