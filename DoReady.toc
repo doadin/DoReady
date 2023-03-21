@@ -1,5 +1,5 @@
-## Interface: 100005
-## Interface-Retail: 100005
+## Interface: 100007
+## Interface-Retail: 100007
 ## Version: @project-version@
 
 ## Notes: Checks if you are missing talents or enchants.
