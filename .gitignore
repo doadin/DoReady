@@ -42,3 +42,4 @@ luac.out
 *.py
 /scripts/*.py
 
+.vscode/
