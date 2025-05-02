@@ -26,6 +26,7 @@ Libs\LibDeflate\lib.xml
 
 #Core.lua
 #UI.lua
+DoReadyTalentImporter.lua
 UI2.lua
 
 #src\DeathKnightFortified.lua
