@@ -9,7 +9,7 @@
 ## Notes: Checks if you are missing talents or enchants.
 
 ## Author: Doadin
-## SavedVariables:
+## SavedVariables: SavedSettings
 ## X-Curse-Project-ID: 554551
 
 

@@ -8,7 +8,7 @@ SavedSettings = SavedSettings or {}
 -- Create a frame for the settings panel
 local settingsFrame = CreateFrame("Frame", "DoReadySettingsFrame", InterfaceOptionsFramePanelContainer)
 settingsFrame.name = "DoReady" -- Name of the addon in the Interface Options
-InterfaceOptions_AddCategory(settingsFrame)
+--InterfaceOptions_AddCategory(settingsFrame)
 
 -- Title for the settings panel
 local title = settingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
@@ -25,3 +25,7 @@ automaticModeCheckbox:SetScript("OnClick", function(self)
     SavedSettings.automaticMode = isChecked -- Save the setting to the SavedSettings table
     --print("Automatic Mode Active:", isChecked)
 end)
+
+local category, layout = Settings.RegisterCanvasLayoutCategory(settingsFrame, settingsFrame.name, settingsFrame.name)
+category.ID = settingsFrame.name
+Settings.RegisterAddOnCategory(category)
