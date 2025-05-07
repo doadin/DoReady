@@ -681,6 +681,7 @@ frame:RegisterEvent("LOADING_SCREEN_DISABLED")
 frame:RegisterEvent("READY_CHECK")
 
 frame:SetScript("OnEvent", function(self, event)
+    if not SavedSettings.automaticMode then return end
     if event == "LOADING_SCREEN_DISABLED" then
         local _, playerClass = UnitClass("player")
         local specIndex = GetSpecialization()

@@ -26,6 +26,7 @@ Libs\LibDeflate\lib.xml
 
 #Core.lua
 #UI.lua
+settings.lua
 DoReadyTalentImporter.lua
 UI2.lua
 
