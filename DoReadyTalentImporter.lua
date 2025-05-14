@@ -591,7 +591,7 @@ end
 
 local function AskToUpdateTalents(class, spec, loadoutName, importString, CurrentMapName)
     -- Define the popup dialog
-    StaticPopupDialogs["MY_ADDON_CONFIRMATION"] = {
+    StaticPopupDialogs["DOREADY_UPDATE_CONFIRMATION"] = {
         text = "Import new Talents for "  .. CurrentMapName .. "?(if accepted, don't move if change talents is casted!)",
         button1 = "Accept",
         button2 = "Cancel",
@@ -610,12 +610,12 @@ local function AskToUpdateTalents(class, spec, loadoutName, importString, Curren
         preferredIndex = 3, -- Avoid conflicts with other popups
     }
     -- Show the popup
-    StaticPopup_Show("MY_ADDON_CONFIRMATION")
+    StaticPopup_Show("DOREADY_UPDATE_CONFIRMATION")
 end
 
 local function AskToActivateTalents(configID, autoApply, CurrentMapName)
     -- Define the popup dialog
-    StaticPopupDialogs["MY_ADDON_CONFIRMATION"] = {
+    StaticPopupDialogs["DOREADY_ACTIVATE_CONFIRMATION"] = {
         text = "Change To Talents for "  .. CurrentMapName .. "?(if accepted, don't move if change talents is casted!)",
         button1 = "Accept",
         button2 = "Cancel",
@@ -643,7 +643,7 @@ local function AskToActivateTalents(configID, autoApply, CurrentMapName)
         preferredIndex = 3, -- Avoid conflicts with other popups
     }
     -- Show the popup
-    StaticPopup_Show("MY_ADDON_CONFIRMATION")
+    StaticPopup_Show("DOREADY_ACTIVATE_CONFIRMATION")
 end
 
 local function CheckTalentUpdate(class, spec, CurrentMapName, importString)
