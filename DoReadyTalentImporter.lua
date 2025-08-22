@@ -476,15 +476,24 @@ addon.TalentStrings = {
 --MapName: Undermine mapid: 2406
 
 local currentSeasonInstances = {
-    ["The Rookery"] = "Rookery",
-    ["Cinderbrew Meadery"] = "Meadery",
-    ["Darkflame Cleft"] = "Darkflame",
-    ["Priory of the Sacred Flame"] = "Priory",
+    --["The Rookery"] = "Rookery",
+    --["Cinderbrew Meadery"] = "Meadery",
+    --["Darkflame Cleft"] = "Darkflame",
+    --["Priory of the Sacred Flame"] = "Priory",
+    --["Operation: Floodgate"] = "Floodgate",
+    --["Theater of Pain"] = "Theater",
+    --["Mechagon"] = "Mechagon",
+    --["The MOTHERLODE!!"] = "MOTHERLODE",
+    --["Undermine"] = "Undermine",
+    ["Ara-Kara, City of Echoes"] = "AraKara",
+    ["Eco-Dome Al'dani"] = "EcoDome",
+    ["Halls of Atonement"] = "HoA",
     ["Operation: Floodgate"] = "Floodgate",
-    ["Theater of Pain"] = "Theater",
-    ["Mechagon"] = "Mechagon",
-    ["The MOTHERLODE!!"] = "MOTHERLODE",
-    ["Undermine"] = "Undermine",
+    ["Priory of the Sacred Flame"] = "Priory",
+    ["Tazavesh: So'leah's Gambit"] = "Gambit",
+    ["Tazavesh: Streets of Wonder"] = "Streets",
+    ["The Dawnbreaker"] = "Dawnbreaker",
+    ["Manaforge Omega"] = "Manaforge",
 }
 
 -- Create a basic addon frame
