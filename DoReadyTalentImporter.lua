@@ -663,7 +663,7 @@ local function CheckTalentUpdate(class, spec, CurrentMapName, importString)
     end
     if not configExists then
         --print("config not found")
-        if addon.TalentStrings[class][string.upper(spec)][addon.GetCurrentMapName()] then
+        if addon.TalentStrings[class][string.gsub(string.upper(spec), " ", "")][addon.GetCurrentMapName()] then
             --print("found update for zone")
             configUpdate = true
         end
@@ -734,7 +734,7 @@ frame:SetScript("OnEvent", function(self, event)
             --for name in pairs(currentSeasonInstances) do
             --    CheckTalentUpdate(playerClass,specNames[specID], name , addon.TalentStrings[playerClass][string.upper(specNames[specID])][name])
             --end
-            CheckTalentUpdate(playerClass,specNames[specID], currentSeasonInstances[addon.GetCurrentMapName()], addon.TalentStrings[playerClass][string.upper(specNames[specID])][addon.GetCurrentMapName()])
+            CheckTalentUpdate(playerClass,specNames[specID], currentSeasonInstances[addon.GetCurrentMapName()], addon.TalentStrings[playerClass][string.gsub(string.upper(specNames[specID]), " ", "")][addon.GetCurrentMapName()])
         end)
     end
     if event == "READY_CHECK" then
