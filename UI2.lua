@@ -1,5 +1,5 @@
 -- Define the addon namespace
-local addonName, addon = ...
+local addonName, addonNS = ...
 
 local AceGUI = LibStub("AceGUI-3.0")
 local MainFrame = AceGUI:Create("Frame")
@@ -11,6 +11,51 @@ MainFrame:SetHeight(300)
 MainFrame:Hide()
 
 local instanceTypeSelector
+
+local _, playerClass = UnitClass("player")
+local specIndex = GetSpecialization()
+local specID = GetSpecializationInfo(specIndex)
+local specNames = {
+    [62] = "Arcane",
+    [63] = "Fire",
+    [64] = "Frost",
+    [65] = "Holy",
+    [66] = "Protection",
+    [70] = "Retribution",
+    [71] = "Arms",
+    [72] = "Fury",
+    [73] = "Protection",
+    [102] = "Balance",
+    [103] = "Feral",
+    [104] = "Guardian",
+    [105] = "Restoration",
+    [250] = "Blood",
+    [251] = "Frost",
+    [252] = "Unholy",
+    [253] = "Beast Mastery",
+    [254] = "Marksmanship",
+    [255] = "Survival",
+    [256] = "Discipline",
+    [257] = "Holy",
+    [258] = "Shadow",
+    [259] = "Assassination",
+    [260] = "Outlaw",
+    [261] = "Subtlety",
+    [262] = "Elemental",
+    [263] = "Enhancement",
+    [264] = "Restoration",
+    [265] = "Affliction",
+    [266] = "Demonology",
+    [267] = "Destruction",
+    [268] = "Brewmaster",
+    [269] = "Windwalker",
+    [270] = "Mistweaver",
+    [577] = "Havoc",
+    [581] = "Vengeance",
+    [1467] = "Devastation",
+    [1468] = "Preservation",
+    [1473] = "Augmentation",
+}
 
 local function GetTalents(_,event, one, two)
     MainFrame:ReleaseChildren()
@@ -66,6 +111,26 @@ local function GetTalents(_,event, one, two)
         end)
         -- Add the button to the container
         TalentHeading:AddChild(btn1)
+
+        local btn2 = AceGUI:Create("Button")
+        btn2:SetWidth(220)
+        btn2:SetText("Check for Talent Update for Streets of Wonder")
+        btn2:SetCallback("OnClick", function()
+            local specID = GetSpecializationInfo(GetSpecialization())
+            local _, playerClass = UnitClass("player")
+            addonNS:CheckTalentUpdate(playerClass,specNames[specID], "Tazavesh, Streets of Wonder", addonNS.TalentStrings[playerClass][string.gsub(string.upper(specNames[specID]), " ", "")]["Tazavesh, Streets of Wonder"])
+        end)
+        TalentHeading:AddChild(btn2)
+
+        local btn3 = AceGUI:Create("Button")
+        btn3:SetWidth(220)
+        btn3:SetText("Check for Talent Update for So'leah's Gambit")
+        btn3:SetCallback("OnClick", function()
+            local specID = GetSpecializationInfo(GetSpecialization())
+            local _, playerClass = UnitClass("player")
+            addonNS:CheckTalentUpdate(playerClass,specNames[specID], "Tazavesh, So'leah's Gambit", addonNS.TalentStrings[playerClass][string.gsub(string.upper(specNames[specID]), " ", "")]["Tazavesh, So'leah's Gambit"])
+        end)
+        TalentHeading:AddChild(btn3)
 
 
         -- Enchant Code Starts Here
@@ -213,7 +278,7 @@ function addon:OnInitialize()
     self:RegisterChatCommand("DoReady", "OpenUI")
 end
 
-function addon:OpenUI(one, two, three, four)
+function addonNS:OpenUI(one)
     if one == "toggle minimap" then
         self.db.profile.minimap.hide = not self.db.profile.minimap.hide
         if self.db.profile.minimap.hide then
