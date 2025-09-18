@@ -485,7 +485,7 @@ local currentSeasonInstances = {
     --["Mechagon"] = "Mechagon",
     --["The MOTHERLODE!!"] = "MOTHERLODE",
     --["Undermine"] = "Undermine",
-    ["Ara-Kara, City of Echoes"] = "AraKara",
+    ["City of Echoes"] = "AraKara",
     ["Eco-Dome Al'dani"] = "EcoDome",
     ["Halls of Atonement"] = "HoA",
     ["Operation: Floodgate"] = "Floodgate",
@@ -744,7 +744,7 @@ frame:SetScript("OnEvent", function(self, event)
             --for name in pairs(currentSeasonInstances) do
             --    CheckTalentUpdate(playerClass,specNames[specID], name , addon.TalentStrings[playerClass][string.upper(specNames[specID])][name])
             --end
-            addon:CheckTalentUpdate(playerClass,specNames[specID], currentSeasonInstances[addon.GetCurrentMapName()], addon.TalentStrings[playerClass][string.gsub(string.upper(specNames[specID]), " ", "")][addon.GetCurrentMapName()])
+            addon:CheckTalentUpdate(playerClass,specNames[specID], addon.GetCurrentMapName(), addon.TalentStrings[playerClass][string.gsub(string.upper(specNames[specID]), " ", "")][addon.GetCurrentMapName()])
             local specID = PlayerUtil.GetCurrentSpecID()
             if specID then
                 -- Get the ID of the last selected saved talent loadout for the current spec
